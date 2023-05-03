@@ -3,7 +3,12 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt'); // require bcrypt for hashing passwords
 
-class User extends Model {}
+class User extends Model {
+    // Adds checkPassword method here for logging in
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+    }
+}
 
 User.init(
     {
