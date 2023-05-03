@@ -23,8 +23,8 @@ Answer.init(
         },
         user_answer: {
             type: DataTypes.TEXT,
-            allowNull: true;
-        }
+            allowNull: true,
+        },
     },
     {
         sequelize,
