@@ -1,0 +1,70 @@
+[
+    {
+        "question": "You enter a tavern and find an old man at the bar. He says to you: “Welcome, traveler! If you’re going to stay here in town, you need to get a job. But first we need to find out more about you so you can find the best job for you.”",
+        "question_type": "Press enter to continue."
+    },
+    {
+        "question": "“What is so special about you anyway? Tell me about yourself.”",
+        "question_type": "Enter input."
+    },
+    {
+        "question": "“Sounds good enough. But we need to see what you’re actually good at.”",
+        "question_type": "Press enter to continue."
+    },
+    {
+        "question": "“What kind of abilities and skills have you developed in your experiences? How will you survive out there?”",
+        "question_type": "Enter input."
+    },
+    {
+        "question": "“Not bad. We could probably find something for you.”",
+        "question_type": "Press enter to continue."
+    },
+    {
+        "question": "“What kind of work experience have you had out in the wastes? Have you been a hired gun, a caravan guard, or a trader? Can you fix broken tech?”",
+        "question_type": "Enter input."
+    },
+    {
+        "question": "“How long were you doing that for?”",
+        "question_type": "Enter input."
+    },
+    {
+        "question": "“What kind of challenges have you faced doing that? Have you had to deal with raiders, mutants, or radscorpions?”",
+        "question_type": "Enter input."
+    },
+    {
+        "question": "“Is that it? Or have you done anything else?”",
+        "question_type": "Yes or no."
+    },
+    {
+        "question": "“Sounds like you had some interesting times. Let’s find out how smart you are.”",
+        "question_type": "Press enter to continue."
+    },
+    {
+        "question": "“What kind of special learning have you got out there? Did you attend the prestigious vault-tec university or learn on the job as a wasteland scavenger?”",
+        "question_type": "Enter input."
+    },
+    {
+        "question": "“What kinds of things did you learn?”",
+        "question_type": "Enter input."
+    },
+    {
+        "question": "“When did you go there?”",
+        "question_type": "Enter input."
+    },
+    {
+        "question": "“Did you have any other schooling?”",
+        "question_type": "Yes or no."
+    },
+    {
+        "question": "“You might be pretty smart! We will have to find you something really good.”",
+        "question_type": "Press enter to continue."
+    },
+    {
+        "question": "“What are some of your proudest accomplishments out in the wasteland? Have you defeated a legendary deathclaw, uncovered hidden caches of valuable loot, or successfully negotiated a peace treaty between rival factions?”",
+        "question_type": "Enter input."
+    },
+    {
+        "question": "“Okay we can work with this. You’re ready to start work. Here take this.”",
+        "question_type": "Press enter to continue."
+    }
+]
