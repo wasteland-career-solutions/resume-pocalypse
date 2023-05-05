@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8">
+
+<head>
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <h1>Sign Up</h1>
+    <form action="/signup" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <input type="submit" value="Sign Up">
+    </form>
+    <form>
+        <label for="user-addr-line-1">Address Line 1:</label>
+        <input type="text" id="user-addr-line-1" name="user-addr-line-1" value="{{addrLine1}}" required>
+
+        <label for="user-addr-line-2">Address Line 2:</label>
+        <input type="text" id="user-addr-line-2" name="user-addr-line-2" value="{{addrLine2}}">
+
+        <label for="user-city">City:</label>
+        <input type="text" id="user-city" name="user-city" value="{{city}}" required>
+
+        <label for="user-state">State:</label>
+        <input type="text" id="user-state" name="user-state" value="{{state}}" required>
+
+        <label for="user-zip-code">Zip Code:</label>
+        <input type="text" id="user-zip-code" name="user-zip-code" value="{{zipCode}}" required>
+
+        <label for="user-phone">Phone Number:</label>
+        <input type="text" id="user-phone" name="user-phone" value="{{phoneNum}}" required>
+
+        <label for="user-github">GitHub URL:</label>
+        <input type="text" id="user-github" name="user-github" value="{{githubUrl}}">
+
+        <label for="user-linkedin">LinkedIn URL:</label>
+        <input type="text" id="user-linkedin" name="user-linkedin" value="{{linkedInUrl}}">
+    </form>
+
+</body>
+
+</html>
