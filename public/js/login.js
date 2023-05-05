@@ -42,11 +42,19 @@ const signupFormHandler = async (event) => { // handler for when a user signs up
     }
   }
 };
+
+document.querySelector('.login-form').addEventListener('click', () => {
+    document.location.replace('api/login')
+});
+
+document.querySelector('.signup-form').addEventListener('click', () => {
+    document.location.replace('api/signup')
+});
   
 document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
   
 document
-.querySelector('.signup-form')
-.querySelector('submit', signupFormHandler);
+    .querySelector('.signup-form')
+    .addEventListener('submit', signupFormHandler);
