@@ -22,10 +22,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Sets up handlebars as the view engine 
 app.engine('handlebars', engine({
     defaultLayout: 'main',
-    layoutsDir: path.join(__dirname, 'views')
+    layoutsDir: path.join(__dirname, 'views/layouts')
 }));
 app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views/layouts'));
 
 // Configures express-session middleware
 app.use(
