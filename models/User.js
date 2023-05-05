@@ -46,7 +46,7 @@ User.init(
         },
     },
     { // Hashing for when a user signs up and creates their password
-        hooks: {
+        hooks: { 
             async beforeCreate(userData) {
                 userData.password = await bcrypt.hash(userData.password, 10); // Difficulty for hashing password set to 10 being extra secure
                 return userData;
