@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Sets up handlebars as the view engine 
-app.engine('handlebars', exhbs({ defaultLayout: 'main '}));
+app.engine('handlebars', exhbs.engine);
 app.set('view engine', 'handlebars');
 
 // Configures express-session middleware
@@ -34,9 +34,9 @@ app.use(
 
 // Sets up and imports api and view routes
 const apiRoutes = require('./routes/api');
-const viewRoutes = require('./routes/views');
+// const viewRoutes = require('./routes/views');
 app.use('/api', apiRoutes);
-app.use('/', viewRoutes);
+// app.use('/', viewRoutes);
 
 // Sync the database and start the server
 sequelize.sync({ force: false }).then(() => {
