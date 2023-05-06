@@ -1,9 +1,10 @@
 // Importing required packages
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
-const exhbs = require('express-handlebars');
+const { engine } = require('express-handlebars');
 const path = require('path');
-require('dotenv').config();
+
 
 // Import sequelize connection and the models
 const sequelize = require('./config/connection');
@@ -19,8 +20,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Sets up handlebars as the view engine 
-app.engine('handlebars', exhbs.engine);
+app.engine('handlebars', engine({
+    defaultLayout: 'main',
+    layoutsDir: path.join(__dirname, 'views/layouts')
+}));
 app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'views/layouts'));
 
 // Configures express-session middleware
 app.use(
@@ -28,15 +33,15 @@ app.use(
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
-        cookie: { maxAge: 900000 }, // 15 min session 
+        cookie: { maxAge: 7200000 }, // 15 min session 
     })
 );
 
 // Sets up and imports api and view routes
 const apiRoutes = require('./routes/api');
-// const viewRoutes = require('./routes/views');
+const viewRoutes = require('./routes/views');
 app.use('/api', apiRoutes);
-// app.use('/', viewRoutes);
+app.use('/', viewRoutes);
 
 // Sync the database and start the server
 sequelize.sync({ force: false }).then(() => {
