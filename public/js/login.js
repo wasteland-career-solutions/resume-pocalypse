@@ -44,6 +44,7 @@ const signupFormHandler = async (event) => { // handler for when a user signs up
 };
 
 document.querySelector('.login-form').addEventListener('click', () => {
+    resizeBy.render('login');
     document.location.replace('api/login')
 });
 
