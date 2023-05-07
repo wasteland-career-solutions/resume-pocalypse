@@ -11,6 +11,13 @@ UserData.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            }
+        },
         address_line_1: {
             type: DataTypes.TEXT,
             allowNull: true,
