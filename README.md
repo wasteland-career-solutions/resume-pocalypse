@@ -6,7 +6,7 @@ We were tasked with creating a full stack application using Node.js, Object-Orie
 
 ## Installation
 
-We used a combination of Node, Express, MySQL, Sequelize, DotENV, Nodemon, Bcrypt, and PDFKit.
+We used a combination of Node, Express, MySQL, Sequelize, Bootstrap, DotENV, Nodemon, Bcrypt, and PDFKit.
 
 ## Usage
 

@@ -1,0 +1,9 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+@font-face {
+    font-family: 'Fallout';
+    font-weight: normal;
+    src: url('public/assets/fonts/JH_FALLOUT.TTF') format('truetype');
+}
+
+
