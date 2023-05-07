@@ -28,6 +28,7 @@
     "mysql2": "^2.2.1",
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^3.5.141",
+    "pdfkit": "^0.13.0",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
