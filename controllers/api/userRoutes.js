@@ -26,9 +26,9 @@ router.get('/userdata', async (req, res) => {
 
 router.get('/play', (req, res) => {
     if (req.session.logged_in) {
-        res.render('game');
+        res.status(200).render('game');
     } else {
-        res.redirect('/login');
+        res.status(500).redirect('/login');
     }
 });
 
