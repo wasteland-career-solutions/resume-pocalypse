@@ -33,7 +33,23 @@ router.get('/play', (req, res) => {
 });
 
 router.post('/signup', async (req, res) => {
+    try {
+        const dbUserData = await User.create({
+            email: req.body.email,
+            password: req.body.password,
+            first_name: req.body.firstName,
+            last_name: req.body.lastName,
+        });
 
+        // Create a "logged_in" session variable on user creation, sets it to true. (required for logout function)
+        req.session.save(() => {
+            req.session.logged_in = true;
+
+            res.status(200).json(dbUserData);
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 router.post('/login', async (req, res) => {

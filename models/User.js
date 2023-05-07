@@ -33,10 +33,6 @@ User.init(
                 len: [8], // Minimum of 8 characters for password
             },
         },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         first_name: {
             type: DataTypes.STRING,
             allowNull: false,
