@@ -21,6 +21,7 @@
   "homepage": "https://github.com/wasteland-career-solutions/resume-pocalypse#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "bootstrap": "^3.4.1",
     "connect-session-sequelize": "^7.1.6",
     "dotenv": "^8.2.0",
     "express": "^4.18.2",
