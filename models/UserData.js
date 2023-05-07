@@ -11,6 +11,14 @@ UserData.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        // Store a refernce of the user this data belongs to.
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
         address_line_1: {
             type: DataTypes.TEXT,
             allowNull: true,
