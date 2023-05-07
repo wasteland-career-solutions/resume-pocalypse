@@ -6,6 +6,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const routes = require('./controllers');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Import sequelize connection and the models
 const sequelize = require('./config/connection');
@@ -23,6 +24,9 @@ app.use(
         resave: false,
         saveUninitialized: true,
         cookie: { maxAge: 7200000 }, // 15 min session 
+        store: new SequelizeStore({
+            db: sequelize,
+          }),
     })
 );
 
