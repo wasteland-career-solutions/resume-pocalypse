@@ -74,7 +74,7 @@ doc.fontSize(12);
 doc.font('Helvetica');
 
 // Add the name and contact information
-doc.text(`${resumeData.name}\n`, { bold: true });
+doc.text(`${resumeData.name}\n`);
 doc.text(`${resumeData.city}, ${resumeData.state} ${resumeData.zip_code} | ${resumeData.phone} | ${resumeData.email}\n\n`);
 
 // Add the links section
