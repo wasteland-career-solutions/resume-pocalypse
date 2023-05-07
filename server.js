@@ -23,7 +23,8 @@ app.use(
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
-        cookie: { maxAge: 7200000 }, // 15 min session 
+        cookie: {
+            maxAge: 7200000 }, // 15 min session 
         store: new SequelizeStore({
             db: sequelize,
           }),

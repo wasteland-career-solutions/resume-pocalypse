@@ -78,6 +78,9 @@ router.post('/login', async (req, res) => {
         // Create a "logged_in" session variable, sets it to true. (required for logout function)
         req.session.save(() => {
             req.session.logged_in = true;
+            console.info(req.session.cookie);
+            console.info(req.session.logged_in);
+            console.info(req.session.user);
         });
 
         res.status(200).json({ message: 'Login Successfully!', user: req.session.user });

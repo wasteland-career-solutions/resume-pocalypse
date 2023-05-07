@@ -1,8 +1,8 @@
 const loginFormHandler = async (event) => { // handler for when a user logs in the game starts
     event.preventDefault();
   
-    const email = document.querySelector('.email-login').value.trim();
-    const password = document.querySelector('.password-login').value.trim();
+    const email = document.querySelector('#email-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
 
     if (email && password) {
         const response = await fetch('/api/users/login', {
@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => { // handler for when a user logs in t
         });
 
         if (response.ok) {
-            document.location.replace('/game/play');
+            document.location.replace('/');
         } else {
             alert('Failed to login');
         }
