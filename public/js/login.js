@@ -22,15 +22,17 @@ const loginFormHandler = async (event) => { // handler for when a user logs in t
 const signupFormHandler = async (event) => { // handler for when a user signs up the game starts
     event.preventDefault();
 
-    const username = document.querySelector('#username-signup').value.trim();
+    // const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#lname-login').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
+    const firstName = document.querySelector('#first-name').value.true();
+    const lastName = document.querySelector('#last-name').value.true();
 
     // Provided all name fields are propegated, send fetch to login route
-    if (username && email && password) { 
-        const response = await fetch('/api/users', {
+    if (firstName && lastName && email && password) { 
+        const response = await fetch('/api/users/signup', {
             method: 'POST',
-            body: JSON.stringify({ username, email, password }),
+            body: JSON.stringify({ email, password, firstName, lastName }),
             headers: { 'Content-Type': 'application/json' },
         });
 
@@ -42,14 +44,6 @@ const signupFormHandler = async (event) => { // handler for when a user signs up
     }
   }
 };
-
-document.querySelector('.login-button').addEventListener('click', () => {
-    document.location.replace('/login')
-});
-
-document.querySelector('.signup-button').addEventListener('click', () => {
-    document.location.replace('/signup')
-});
   
 document
     .querySelector('.login-form')

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { UserData } = require('../../models');
 
-router.get('/UserData', async (req, res) => {
+router.get('/userdata', async (req, res) => {
     try {
 
         if(!req.session.logged_in) {
@@ -22,4 +22,4 @@ router.get('/UserData', async (req, res) => {
     } catch (err) {
         res.status(500).json(err)
     }
-}) 
+});
