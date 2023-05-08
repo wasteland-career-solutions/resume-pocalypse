@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => { // handler for when a user logs in t
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/'); // change this to the correct route
         } else {
             alert('Failed to login');
         }
