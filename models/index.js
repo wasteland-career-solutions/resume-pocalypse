@@ -25,6 +25,10 @@ Answer.hasOne(User, {
     foreignKey: 'user_id',
 })
 
+// Answer.hasOne(Question, {
+//     foreignKey: 'question_id',
+// })
+
 // User.belongsToMany(Answer, {
 //     foreignKey: 'user_id',
 //     onDelete: 'CASCADE',

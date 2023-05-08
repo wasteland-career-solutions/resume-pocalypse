@@ -6,8 +6,9 @@ const answerField = document.querySelector('#form-input');
 
 // Get questions from backend
 async function getGameData() {
-    const result = await fetch('/api/users/questionData', {
-        method: 'GET'
+    const result = await fetch('/api/users/play', {
+        method: 'GET',
+        headers: 'application/json'
     }); // this might not be right.
     return result;
 };
@@ -40,10 +41,12 @@ function sendGameResults(userAnswers) {
 // Collect all data into the core, then POST to the database
 function core() {
     const gameQuestions = getGameData();
-    gameQuestions.forEach(element => {
-        //load element onto page
-        //get answer from answer field,
-    })
+    // gameQuestions.forEach(element => {
+    //     //load element onto page
+    //     //get answer from answer field,
+    // })
+    let questionText = document.querySelector('#question-text');
+    questionText.textContent = gameQuestions[0].body;
 };
 
 gameForm.addEventListener('submit', (event) => {
