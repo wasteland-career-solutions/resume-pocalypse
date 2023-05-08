@@ -37,6 +37,7 @@
 
 </head>
 
+<<<<<<< HEAD
 <body>
   <header>
     <h1>Resume-pocalypse</h1>
@@ -57,6 +58,26 @@
     {{{body}}}
   </main>
   
+=======
+  <body >
+    <header>
+        <h1>Resume-pocalypse</h1>
+        {{#if logged_in}}
+            <nav>
+                Hello {{user.firstName}}
+                <button class="btn" id="logout">logout</button>
+            </nav>
+            {{else}}
+            <nav>
+                <h3>Please sign in</h3>
+            </nav>
+        {{/if}}
+    </header>
+
+    <main>
+      {{{body}}}
+    </main>
+>>>>>>> main
 </body>
 
 </html>

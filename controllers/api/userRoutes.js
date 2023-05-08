@@ -26,9 +26,9 @@ router.get('/userdata', async (req, res) => {
 
 router.get('/play', (req, res) => {
     if (req.session.logged_in) {
-        res.render('game');
+        res.status(200).render('game');
     } else {
-        res.redirect('/login');
+        res.status(500).redirect('/login');
     }
 });
 
@@ -77,10 +77,14 @@ router.post('/login', async (req, res) => {
 
         // Create a "logged_in" session variable, sets it to true. (required for logout function)
         req.session.save(() => {
-            req.session.logged_in = true;
+            req.session.loggedIn = true;
+            // console.info(req.session.cookie);
+            // console.info(req.session.logged_in);
+            // console.info(req.session.user);
+            res.json({user: user.first_name, message: 'Succesful login!' });
         });
 
-        res.status(200).json({ message: 'Login Successfully!', user: req.session.user });
+        // res.status(200).json({ message: 'Login Successfully!', user: req.session.user });
 
     } catch (err) {
         res.status(500).json(err);
