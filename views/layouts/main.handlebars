@@ -14,35 +14,26 @@
 
   <body>
     <header>
-<<<<<<< HEAD
-      <img src="../../public/assets/images/ResumePocalypseLogo.png" alt="Resume-Pocalypse">
-=======
-        <h1>Resume-pocalypse</h1>
-        {{#if logged_in}}
-            <nav>
-                Hello {{user.firstName}}
-                <button class="btn" id="logout">logout</button>
-            </nav>
-        {{else}}
-            <nav>
-                <h3>Please sign in</h3>
-            </nav>
-        {{/if}}
->>>>>>> main
+      <img class="logo" src="/assets/images/ResumePocalypseLogo.png" alt="Resume-Pocalypse" />
+      {{#if logged_in}}
+        <nav class="text-center">
+          Hello {{user.firstName}}
+          <button class="btn" id="logout">LOG OUT</button>
+        </nav>
+      {{else}}
+        <nav class="text-center">
+          <h3>Please sign in</h3>
+        </nav>
+      {{/if}}
     </header>
 
     <main>
       {{{body}}}
     </main>
-<<<<<<< HEAD
-  </body>
-</html>
-=======
     
     {{#if logged_in}}
     <script src="./js/logout.js"></script>
     {{/if}}
-</body>
+  </body>
 
 </html>
->>>>>>> main
