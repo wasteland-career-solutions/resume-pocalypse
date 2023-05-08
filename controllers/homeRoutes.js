@@ -1,6 +1,3 @@
-const { error } = require('pdf-lib');
-const { Question } = require('../models');
-
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
@@ -16,27 +13,6 @@ router.get('/login', (req, res) => {
     res.render('login', { logged_in: req.session.logged_in, });
 });
 
-// router.get('/game', async (req, res) => {
-//     try{
-//         const dbQuestionData = Question.findAll();
-
-//         const questions = (await dbQuestionData).map((question) =>
-//             question.get({ plain: true })
-//         );
-
-//         if (req.session.logged_in) {
-//             res.render('game', { questions, logged_in: req.session.logged_in });
-//         }
-//         else {
-//             res.redirect('login');
-//             alert('Please log in to play the game.')
-//         }
-//     } catch (err) {
-//         console.error(err);
-//     }
-    
-// });
-
 router.get('/game', async (req, res) => {
     if (req.session.logged_in) {
         res.render('game', { logged_in: req.session.logged_in });
@@ -45,5 +21,14 @@ router.get('/game', async (req, res) => {
         alert('Please log in to play the game.');
     }
 });
+
+router.get('/userinfo', (req, res) => {
+    if (req.session.logged_in) {
+        res.render('userinfo', { logged_in: req.session.logged_in });
+    } else {
+        res.redirect('login');
+        alert('Please log in to input user info.');
+    }
+})
 
 module.exports = router;

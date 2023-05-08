@@ -1,17 +1,4 @@
 <body>
-    <h1>Sign Up</h1>
-    <form action="/signup" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
-
-        <input type="submit" value="Sign Up">
-    </form>
     <form>
         <label for="user-addr-line-1">Address Line 1:</label>
         <input type="text" id="user-addr-line-1" name="user-addr-line-1" value="{{addrLine1}}" required>
@@ -37,4 +24,5 @@
         <label for="user-linkedin">LinkedIn URL:</label>
         <input type="text" id="user-linkedin" name="user-linkedin" value="{{linkedInUrl}}">
     </form>
+    <script src="./js/userinfo.js"></script>
 </body>
