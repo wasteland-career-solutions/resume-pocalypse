@@ -5,11 +5,11 @@ const Answer = require('./Answer');
 
 User.hasOne(UserData, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE',
+    onDelete: 'CASCADE'
 })
 
 UserData.belongsTo(User, {
-    foreignKey: 'user_id',
+    foreignKey: 'user_id'
 });
 
 Question.hasOne(Answer, {
@@ -18,7 +18,8 @@ Question.hasOne(Answer, {
 });
 
 Answer.belongsTo(Question, {
-    foreignKey: 'question_id',
+    foreignKey: 'question_id'
 })
+
 // module.exports = { UserData, User, Question, Answer };
 module.exports = { UserData, User, Question, Answer };

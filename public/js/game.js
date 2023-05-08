@@ -11,14 +11,15 @@ async function getGameData() {
     }); // this might not be right.
     return result;
 };
-/* Question: CONTENT + ID, [
-[questionId, userAnswer],
-[questionId, userAnswer]
-] first question and questions id = [0][0], first question and users answer = [0][1]
-*/
-        // let uId = session.user.id;
-        // let qId = data[0];
-        // let uAns = data[1];
+
+// Question: CONTENT + ID, [
+//     [questionId, userAnswer],
+//     [questionId, userAnswer]
+// ] first question and questions id = [0][0], first question and users answer = [0][1]
+
+// let uId = session.user.id;
+// let qId = data[0];
+// let uAns = data[1];
 
 async function sendData(userID, questionID, userAnswer) {
     const result = await fetch('/api/users/answer', {
@@ -26,14 +27,14 @@ async function sendData(userID, questionID, userAnswer) {
         body: JSON.stringify({userID, questionID, userAnswer}),
     });
     return result;
-}
+};
 
 function sendGameResults(userAnswers) {
     userAnswers.forEach(data => {
         sendData(session.user.id, data[0], data[1]) // this might not be right.
     });
-    
-}
+};
+
 // Start the game function
 // Core will track game progres, and agrigate data to and from server.
 // Core will start with a fetch GET and end with a fetch POST.
@@ -41,8 +42,8 @@ function sendGameResults(userAnswers) {
 function core() {
     const gameQuestions = getGameData();
     gameQuestions.forEach(element => {
-        //load element onto page
-        //get answer from answer field,
+        // load element onto page
+        // get answer from answer field,
     })
 };
 

@@ -4,6 +4,7 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt'); // require bcrypt for hashing passwords
 
 class User extends Model {
+
     // Adds checkPassword method here for logging in
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
@@ -16,30 +17,30 @@ User.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             validate: {
-                isEmail: true,
-            },
+                isEmail: true
+            }
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [8], // Minimum of 8 characters for password
-            },
+                len: [8] // Minimum of 8 characters for password
+            }
         },
         first_name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         last_name: {
-            type: DataTypes.STRING,
-        },
+            type: DataTypes.STRING
+        }
     },
     { // Hashing for when a user signs up and creates their password
         hooks: { 
@@ -52,13 +53,13 @@ User.init(
                     updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
                 }
                 return updatedUserData;
-            },
+            }
         },
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'user'
     }
 );
 
