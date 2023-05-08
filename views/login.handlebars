@@ -1,6 +1,8 @@
+<link rel="stylesheet" href="/public/css/bootstrap.min.css">
+<div class="login-card" style="background-color: rgb(101, 195, 87); color: rgb(47, 58, 136);">
 <div class="row justify-space-between-md">
   <div class="login-card">
-    <h2 class="page-title">Login</h2>
+    <h2 class="page-title">Login Page</h2>
     <form class="form login-form">
       <div class="form-group">
         <label for="email-login">Email:</label>
@@ -15,7 +17,54 @@
       </div>
     </form>
   </div>
-  
+</div> 
 </div>
+<style>
+/* Apply styles to the container element */
+.login-card {
+  position: relative;
+  margin: 0 auto;
+  padding: 90px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: gold;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}
 
+/* Style the heading */
+.page-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Style the form */
+.container form {
+  display: grid;
+  gap: 10px;
+}
+
+/* Style the form inputs */
+.container input[type="text"],
+.container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Style the submit button */
+.container button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.container button[type="submit"]:hover {
+  background-color: #45a049;
+}
+</style>
+<script src="/public/js/bootstrap.min.js"></script>
 <script src="./js/login.js"></script>
