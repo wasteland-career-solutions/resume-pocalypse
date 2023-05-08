@@ -13,13 +13,17 @@ Answer.init(
         },
         user_id: {
             type: DataTypes.INTEGER,
-            references: 'user',
-            key: 'id',
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         },
         question_id: {
             type: DataTypes.INTEGER,
-            references: 'question',
-            key: 'id',
+            references: {
+                model: 'question',
+                key: 'id'
+            }
         },
         user_answer: {
             type: DataTypes.TEXT,
