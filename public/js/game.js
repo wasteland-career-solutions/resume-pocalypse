@@ -7,6 +7,7 @@ const answerField = document.querySelector('#form-input');
 
 
 // Get questions from backend
+/* none handlebars variant
 async function getGameData() {
     try{
         const result = await fetch('/api/users/play', {
@@ -22,6 +23,21 @@ async function getGameData() {
         console.error(err);
     }
 };
+*/
+
+async function getGameData() {
+    try{
+        const result = await fetch('/api/users/play', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        });
+        const data = await result.json();
+        return data;
+    } catch (err) {
+        console.error(err);
+    }
+};
+
 /* Question: CONTENT + ID, [
 [questionId, userAnswer],
 [questionId, userAnswer]

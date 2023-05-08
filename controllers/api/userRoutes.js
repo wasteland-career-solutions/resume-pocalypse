@@ -22,17 +22,29 @@ router.get('/userdata', async (req, res) => {
         res.status(500).json(err)
     }
 });
-
+/* non handlebars version
 router.get('/play', async (req, res) => {
     try {
         const dbQuestionData = await Question.findAll();
-        // console.info(data)
-        // res.status(200).json(data); // Send back all questions
 
         const questions = dbQuestionData.map((question) =>
         question.get({ plain: true })
         );
         res.json(questions);
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+*/
+
+router.get('/play', async (req, res) => {
+    try {
+        const dbQuestionData = await Question.findAll();
+
+        const questions = dbQuestionData.map((question) =>
+            question.get({ plain: true })
+        );
+        res.render('question', { questions });
     } catch (err) {
         res.status(500).json(err)
     }
