@@ -28,18 +28,22 @@
 
   <body >
     <header>
-      <h1>Resume-pocalypse</h1>
+        <h1>Resume-pocalypse</h1>
+        {{#if logged_in}}
+            <nav>
+                Hello {{user.firstName}}
+                <button class="btn" id="logout">logout</button>
+            </nav>
+            {{else}}
+            <nav>
+                <h3>Please sign in</h3>
+            </nav>
+        {{/if}}
     </header>
-
-    <nav>
-    </nav>
 
     <main>
       {{{body}}}
     </main>
-    <script src="/js/homepage.js"></script>
-
-    
-  </body>
+</body>
 
 </html>
