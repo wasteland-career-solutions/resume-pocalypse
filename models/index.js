@@ -12,7 +12,7 @@ UserData.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-Question.hasMany(Answer, {
+Question.hasOne(Answer, {
   foreignKey: 'question_id',
   onDelete: 'CASCADE'
 });
