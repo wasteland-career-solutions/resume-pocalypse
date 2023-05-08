@@ -21,5 +21,18 @@ Answer.belongsTo(Question, {
     foreignKey: 'question_id'
 })
 
+Answer.hasOne(User, {
+    foreignKey: 'user_id',
+})
+
+// Answer.hasOne(Question, {
+//     foreignKey: 'question_id',
+// })
+
+// User.belongsToMany(Answer, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE',
+// })
+
 // module.exports = { UserData, User, Question, Answer };
 module.exports = { UserData, User, Question, Answer };
