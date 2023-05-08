@@ -9,7 +9,7 @@ Answer.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -27,15 +27,15 @@ Answer.init(
         },
         user_answer: {
             type: DataTypes.TEXT,
-            allowNull: true,
-        },
+            allowNull: true
+        }
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'answer',
+        modelName: 'answer'
     }
 );
 

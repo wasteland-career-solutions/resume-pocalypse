@@ -9,7 +9,7 @@ UserData.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
         },
         // Store a refernce of the user this data belongs to.
         user_id: {
@@ -21,43 +21,43 @@ UserData.init(
         },
         address_line_1: {
             type: DataTypes.TEXT,
-            allowNull: true,
+            allowNull: true
         },
         address_line_2: {
             type: DataTypes.TEXT,
-            allowNull: true,
+            allowNull: true
         },
         city: {
             type: DataTypes.TEXT,
-            allowNull: true,
+            allowNull: true
         },
         state: {
             type: DataTypes.TEXT,
-            allowNull: true,
+            allowNull: true
         },
         zip_code: {
             type: DataTypes.TEXT,
-            allowNull: true,
+            allowNull: true
         },
         phone_number: {
             type: DataTypes.TEXT,
-            allowNull: true,
+            allowNull: true
         },
         github_url: {
             type: DataTypes.TEXT,
-            allowNull: true,
+            allowNull: true
         },
         linkedin_url: {
             type: DataTypes.TEXT,
-            allowNull: true,
-        },
+            allowNull: true
+        }
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user_data',
+        modelName: 'user_data'
     }
 );
 

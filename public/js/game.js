@@ -53,14 +53,14 @@ async function sendData(userID, questionID, userAnswer) {
         body: JSON.stringify({userID, questionID, userAnswer}),
     });
     return result;
-}
+};
 
 function sendGameResults(userAnswers) {
     userAnswers.forEach(data => {
         sendData(session.user.id, data[0], data[1]) // this might not be right.
     });
-    
-}
+};
+
 // Start the game function
 // Core will track game progres, and agrigate data to and from server.
 // Core will start with a fetch GET and end with a fetch POST.

@@ -29,7 +29,7 @@ Question.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'question',
+        modelName: 'question'
     }
 );
 
