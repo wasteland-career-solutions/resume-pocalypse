@@ -26,33 +26,33 @@ function nextQuestion() {
 function loadQuestion() {
     const newLi = document.createElement('li')
     const newQ = document.createElement('h2')
-    const userAnswer = document.createElement('p');
+    // const userAnswer = document.createElement('p');
 
     newQ.textContent = allQuestionArr[position].body;
     nextQuestion();
 
     newQ.setAttribute('class', 'question-container');
 
-    if(answerField.value) { // Check if there was an answer to store in the list item entry
-        userAnswer.textContent = answerField.value;
-        newLi.appendChild(userAnswer);
-    } else {
-        console.log('Error storing response');
-    }
+    // if(answerField.value && answerField.value != answerField.defaultValue) { // Check if there was an answer to store in the list item entry
+    //     userAnswer.textContent = userAnswer[userAnswer.length - 1];
+    //     newLi.appendChild(userAnswer);
+    // } else {
+    //     console.log('Error storing response');
+    // }
     
     newLi.appendChild(newQ); // Store the previous question
-    newLi.appendChild(userAnswer);
+    // newLi.appendChild(userAnswer);
     qAnsList.appendChild(newLi);
 }
 
-function renderNextQuestion() {
-    
+function resetAnswer() {
     
 }
 
 async function init() {
     try{
         allQuestionArr = await fetchQuestions();
+        loadQuestion();
     }
     catch (err) {
         console.error(err);
@@ -61,9 +61,15 @@ async function init() {
 
 init(); 
 
-document.querySelector('#next-button').addEventListener('click', (event) => {
+document.querySelector('#answer-form').addEventListener('submit', (event) => {
     event.preventDefault();
     if(answerField.value != "" && answerField.value != answerField.defaultValue) {
+        const userAnswer = document.createElement('p');
+        const newLi = document.createElement('li')
+        userAnswer.textContent = answerField.value;
+        newLi.appendChild(userAnswer);
+        qAnsList.appendChild(newLi);
+
         userAnswers.push(answerField.value); // Store the answer
         answerField.textContent = ""; // Clear the answer box
         document.querySelector('#answer-form').reset();
