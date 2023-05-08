@@ -7,17 +7,14 @@ document.querySelector('.signup-button').addEventListener('click', () => {
 });
 
 document.querySelector('.play-button').addEventListener('click', async () => {
-    const response = await fetch('/api/users/play', {
+    const response = await fetch('/game', {
         method: 'GET',
-        redirect: 'follow',
+        headers: { 'Content-Type': 'application/json' },
     });
-
-    if (response.redirected) {
-        // document.location.replace('/game');
+    if (response.ok) {
+        document.location.replace('/game');
     } 
-    if (response.status(500)) {
-        // document.location.replace('/login');
-    } else {
-        alert('Cannot play the game until you sign in.');
+    else {
+        alert(response.statusText);
     }
 });

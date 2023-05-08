@@ -31,7 +31,7 @@
                 Hello {{user.firstName}}
                 <button class="btn" id="logout">logout</button>
             </nav>
-            {{else}}
+        {{else}}
             <nav>
                 <h3>Please sign in</h3>
             </nav>
@@ -41,6 +41,10 @@
     <main>
       {{{body}}}
     </main>
+    
+    {{#if logged_in}}
+    <script src="./js/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>
