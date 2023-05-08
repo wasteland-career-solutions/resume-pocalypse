@@ -22,24 +22,23 @@ router.get('/userdata', async (req, res) => {
         res.status(500).json(err)
     }
 });
-/* non handlebars version
+
 router.get('/play', async (req, res) => {
     try {
         const dbQuestionData = await Question.findAll();
 
         const questions = dbQuestionData.map((question) =>
-        question.get({ plain: true })
+            question.get({ plain: true })
         );
         res.json(questions);
     } catch (err) {
         res.status(500).json(err)
     }
 });
-*/
 
-router.get('/play', async (req, res) => {
+router.get('/play/:id', async (req, res) => {
     try {
-        const dbQuestionData = await Question.findAll();
+        const dbQuestionData = await Question.findByPk(req.params.id);
 
         const questions = dbQuestionData.map((question) =>
             question.get({ plain: true })
