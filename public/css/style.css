@@ -3,6 +3,7 @@
 
 *{
   font-family: 'Chakra Petch', sans-serif;
+  list-style: none;
 }
 
 img {
@@ -51,6 +52,10 @@ body {
   color: #FEF265;
   border: 1px solid #ccc;
   border-radius: 55px;
+}
+
+#game-container {
+  margin: 100px;
 }
 
 /* Style the heading */
