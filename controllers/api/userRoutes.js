@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const { User, UserData } = require('../../models');
+const { User, UserData, Question } = require('../../models');
 
 router.get('/userdata', async (req, res) => {
     try {
-
         if(!req.session.logged_in) {
             res.status(401).json({message: 'You must be logged in to call this function.'});
             return;    
@@ -23,12 +22,31 @@ router.get('/userdata', async (req, res) => {
         res.status(500).json(err)
     }
 });
+/* non handlebars version
+router.get('/play', async (req, res) => {
+    try {
+        const dbQuestionData = await Question.findAll();
 
-router.get('/play', (req, res) => {
-    if (req.session.logged_in) {
-        res.status(200).render('game');
-    } else {
-        res.status(500).redirect('/login');
+        const questions = dbQuestionData.map((question) =>
+        question.get({ plain: true })
+        );
+        res.json(questions);
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+*/
+
+router.get('/play', async (req, res) => {
+    try {
+        const dbQuestionData = await Question.findAll();
+
+        const questions = dbQuestionData.map((question) =>
+            question.get({ plain: true })
+        );
+        res.render('question', { questions });
+    } catch (err) {
+        res.status(500).json(err)
     }
 });
 
@@ -77,15 +95,10 @@ router.post('/login', async (req, res) => {
 
         // Create a "logged_in" session variable, sets it to true. (required for logout function)
         req.session.save(() => {
-            req.session.loggedIn = true;
-            // console.info(req.session.cookie);
-            // console.info(req.session.logged_in);
-            // console.info(req.session.user);
+            req.session.logged_in = true;
+            // res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
             res.json({user: user.first_name, message: 'Succesful login!' });
         });
-
-        // res.status(200).json({ message: 'Login Successfully!', user: req.session.user });
-
     } catch (err) {
         res.status(500).json(err);
     }

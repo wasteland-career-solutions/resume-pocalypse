@@ -1,16 +1,43 @@
-const session = require("express-session");
+const { response } = require("express");
+
+// const session = require("express-session");
 const gameForm = document.querySelector('#game-form');
 const questionField = document.querySelector('#question-text');
 const answerField = document.querySelector('#form-input');
 
 
 // Get questions from backend
+/* none handlebars variant
 async function getGameData() {
-    const result = await fetch('/api/users/questionData', {
-        method: 'GET'
-    }); // this might not be right.
-    return result;
+    try{
+        const result = await fetch('/api/users/play', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        });
+        const data = await result.json();
+        data.forEach(element => {
+            console.log(element);
+        })
+        return data;
+    } catch (err) {
+        console.error(err);
+    }
 };
+*/
+
+async function getGameData() {
+    try{
+        const result = await fetch('/api/users/play', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        });
+        const data = await result.json();
+        return data;
+    } catch (err) {
+        console.error(err);
+    }
+};
+
 /* Question: CONTENT + ID, [
 [questionId, userAnswer],
 [questionId, userAnswer]
@@ -40,10 +67,13 @@ function sendGameResults(userAnswers) {
 // Collect all data into the core, then POST to the database
 function core() {
     const gameQuestions = getGameData();
-    gameQuestions.forEach(element => {
-        //load element onto page
-        //get answer from answer field,
-    })
+    // gameQuestions.forEach(element => {
+    //     //load element onto page
+    //     //get answer from answer field,
+    // })
+    // let questionText = document.querySelector('#question-text');
+    // questionText.textContent = gameQuestions[0].body;
+    console.log(gameQuestions)
 };
 
 gameForm.addEventListener('submit', (event) => {

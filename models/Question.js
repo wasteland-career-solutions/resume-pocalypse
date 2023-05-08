@@ -11,9 +11,17 @@ Question.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        name: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
         body: {
-                type: DataTypes.TEXT,
-                allowNull: false,
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        question_type: {
+            type: DataTypes.TEXT,
+            allowNull: false,
         },
     },
     {

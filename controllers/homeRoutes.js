@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-    res.render('signup');
+    res.render('signup', { logged_in: req.session.logged_in, });
 });
 
 router.get('/login', (req, res) => {
@@ -14,7 +14,13 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/game', (req, res) => {
-    res.render('game');
+    if (req.session.logged_in) {
+        res.render('game', { logged_in: req.session.logged_in, });
+    }
+    else {
+        res.redirect('login');
+        alert('Please log in to play the game.')
+    }
 });
 
 module.exports = router;
