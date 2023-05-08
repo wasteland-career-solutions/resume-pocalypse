@@ -1,15 +1,6 @@
-<head>
-
-  {{!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> --}}
-
-{{!-- <link ref="stylesheet" href="/public/style.css"/> --}}
-
-</head>
-  
-  <div class="login-card">
-    <h2 class="page-title">Login Page</h2>
+<body>
+  <div class="login-card text-center">
+    <h2 class="page-title">Login</h2>
     <form class="form login-form">
       <div class="form-group">
         <label for="email-login">Email:</label>
@@ -20,12 +11,13 @@
         <input class="form-input" type="password" id="password-login" />
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
+        <button class="btn btn-primary" type="submit">LOG IN</button>
       </div>
     </form>
+    <h3>Not already a user?</h3>
+    <button class='btn btn-primary signup-button'>SIGN UP</button>
   </div>
-</div> 
-</div>
-
-{{!-- <script src="/public/js/bootstrap.min.js"></script> --}}
-<script src="./js/login.js"></script>
+  
+  {{!-- <script src="/public/js/bootstrap.min.js"></script> --}}
+  <script src="./js/login.js"></script>
+</body>

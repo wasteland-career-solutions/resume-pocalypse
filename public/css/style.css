@@ -1,29 +1,29 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 /* @import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"); */
 
-
 *{
   font-family: 'Chakra Petch', sans-serif;
 }
 
-h1 {
-  font-family: 'Chakra Petch', sans-serif;
-  /* font-family: "Times New Roman", Times, serif; */
-  font-size: 80px;
-  color: #00ee00;
-  text-align: center;
-  text-shadow: #00ed00 0px 0px 15px;
+img {
+  max-height: 400px;
 }
 
 body {
-  background: linear-gradient(90deg, #4b4b4b 90%, #171717 100%, #4b4b4b 90%)
+  background: linear-gradient(90deg, #4b4b4b 90%, #171717 100%, #4b4b4b 90%);
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-self: center;
+  align-content: center;
+  color: #1bff80;
 }
 
 /* Apply styles to the container element */
 
 .login-card {  
   width: 300px;
-  height: 200px;
+  height: 315px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -31,7 +31,24 @@ body {
   margin-left: -150px;
   padding: 20px;
   /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
-  background-color: bisque;
+  background-color: #325886;
+  color: #FEF265;
+  border: 1px solid #ccc;
+  border-radius: 55px;
+}
+
+.signup-card {  
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+  padding: 20px;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  background-color: #325886;
+  color: #FEF265;
   border: 1px solid #ccc;
   border-radius: 55px;
 }
@@ -59,14 +76,14 @@ body {
 }
 
 /* Style the submit button */
-.container button[type="submit"] {
+/* .container button[type="submit"] {
   padding: 10px 20px;
   background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
-}
+} */
 
 .container button[type="submit"]:hover {
   background-color: #45a049;
