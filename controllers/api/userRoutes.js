@@ -44,7 +44,7 @@ router.get('/play', async (req, res) => {
         const questions = dbQuestionData.map((question) =>
             question.get({ plain: true })
         );
-        res.render('question', { questions });
+        res.json(questions);
     } catch (err) {
         res.status(500).json(err)
     }

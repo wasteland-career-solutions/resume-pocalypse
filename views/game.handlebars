@@ -1,11 +1,12 @@
-<div>
-        <!-- Add your game content here -->
-        <h2 class="question-text">Here is an example question</h2>
-        <form class="form game-form">
-        <div class="form-group">
-            <input class="form-input" type="text" id="email-login" />
-        </div>
-        </form>
+<div id="game-template" >
+    <div id="game-container">
+        <h2>Question {{myObjects.[currentIndex].id}}:</h2>
+        <p>Value: {{questionData.[currentIndex].body}}</p>
+        {{#if hasNext}}
+            <button class="btn btn-primary" id="next-button">Next</button>
+        {{/if}}
+    </div>
+
 </div>
 
-<script src="./js/game.js"></script>
+<script src="./js/gamelogic.js"></script>
