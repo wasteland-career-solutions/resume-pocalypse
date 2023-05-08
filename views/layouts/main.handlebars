@@ -2,6 +2,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<<<<<<< HEAD
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap"rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <title>Resume-Pocalypse</title>
+  </head>
+
+  <body>
+    <header>
+      <img src="/assets/images/ResumePocalypseLogo.png" alt="Resume-Pocalypse">
+        <h1>Resume-pocalypse</h1>
+        {{#if logged_in}}
+            <nav>
+                Hello {{user.firstName}}
+                <button class="btn" id="logout">logout</button>
+            </nav>
+        {{else}}
+            <nav>
+                <h3>Please sign in</h3>
+            </nav>
+        {{/if}}
+    </header>
+
+    <main>
+      {{{body}}}
+    </main>
+    
+=======
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap"rel="stylesheet"/>
@@ -14,6 +45,7 @@
 <body>
   <header>
     <img class="logo" src="/assets/images/ResumePocalypseLogo.png" alt="Resume-Pocalypse" />
+>>>>>>> main
     {{#if logged_in}}
       <nav class="text-center">
         Hello {{user.firstName}}
@@ -33,3 +65,8 @@
   <script src="./js/logout.js"></script>
   {{/if}}
 </body>
+<<<<<<< HEAD
+
+</html>
+=======
+>>>>>>> main

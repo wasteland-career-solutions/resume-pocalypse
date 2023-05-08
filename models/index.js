@@ -12,18 +12,18 @@ UserData.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Question.hasOne(Answer, {
-  foreignKey: 'question_id',
-  onDelete: 'CASCADE'
-});
+// Question.hasOne(Answer, {
+//   foreignKey: 'question_id',
+//   onDelete: 'CASCADE'
+// });
 
-Answer.belongsTo(Question, {
-    foreignKey: 'question_id'
-})
+// Answer.belongsTo(Question, {
+//     foreignKey: 'question_id'
+// })
 
-Answer.hasOne(User, {
-    foreignKey: 'user_id',
-})
+// Answer.hasOne(User, {
+//     foreignKey: 'user_id',
+// })
 
 // Answer.hasOne(Question, {
 //     foreignKey: 'question_id',
