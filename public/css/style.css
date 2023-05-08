@@ -1,0 +1,73 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+/* @import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"); */
+
+
+*{
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+h1 {
+  font-family: 'Chakra Petch', sans-serif;
+  /* font-family: "Times New Roman", Times, serif; */
+  font-size: 80px;
+  color: #00ee00;
+  text-align: center;
+  text-shadow: #00ed00 0px 0px 15px;
+}
+
+body {
+  background: linear-gradient(90deg, #4b4b4b 90%, #171717 100%, #4b4b4b 90%)
+}
+
+/* Apply styles to the container element */
+
+.login-card {  
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+  padding: 20px;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  background-color: bisque;
+  border: 1px solid #ccc;
+  border-radius: 55px;
+}
+
+/* Style the heading */
+.page-title {
+  /* font-family: "VT323", monospace; */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Style the form */
+.container form {
+  display: grid;
+  gap: 10px;
+}
+
+/* Style the form inputs */
+.container input[type="text"],
+.container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Style the submit button */
+.container button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.container button[type="submit"]:hover {
+  background-color: #45a049;
+}
