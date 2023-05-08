@@ -25,9 +25,14 @@ router.get('/userdata', async (req, res) => {
 
 router.get('/play', async (req, res) => {
     try {
-        const data = await Question.findAll()
+        const dbQuestionData = await Question.findAll();
+        // console.info(data)
+        // res.status(200).json(data); // Send back all questions
 
-        res.status(200).json(data); // Send back all questions
+        const questions = dbQuestionData.map((question) =>
+        question.get({ plain: true })
+        );
+        res.json(questions);
     } catch (err) {
         res.status(500).json(err)
     }

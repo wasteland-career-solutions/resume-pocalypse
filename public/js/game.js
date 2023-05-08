@@ -1,4 +1,6 @@
-const session = require("express-session");
+const { response } = require("express");
+
+// const session = require("express-session");
 const gameForm = document.querySelector('#game-form');
 const questionField = document.querySelector('#question-text');
 const answerField = document.querySelector('#form-input');
@@ -6,11 +8,19 @@ const answerField = document.querySelector('#form-input');
 
 // Get questions from backend
 async function getGameData() {
-    const result = await fetch('/api/users/play', {
-        method: 'GET',
-        headers: 'application/json'
-    }); // this might not be right.
-    return result;
+    try{
+        const result = await fetch('/api/users/play', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        });
+        const data = await result.json();
+        data.forEach(element => {
+            console.log(element);
+        })
+        return data;
+    } catch (err) {
+        console.error(err);
+    }
 };
 /* Question: CONTENT + ID, [
 [questionId, userAnswer],
@@ -45,8 +55,9 @@ function core() {
     //     //load element onto page
     //     //get answer from answer field,
     // })
-    let questionText = document.querySelector('#question-text');
-    questionText.textContent = gameQuestions[0].body;
+    // let questionText = document.querySelector('#question-text');
+    // questionText.textContent = gameQuestions[0].body;
+    console.log(gameQuestions)
 };
 
 gameForm.addEventListener('submit', (event) => {
