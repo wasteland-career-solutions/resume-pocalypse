@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/wasteland-career-solutions/resume-pocalypse#readme",
   "dependencies": {
+    "base64-stream": "^1.0.0",
     "bcrypt": "^5.1.0",
     "bootstrap": "^3.4.1",
     "connect-session-sequelize": "^7.1.6",

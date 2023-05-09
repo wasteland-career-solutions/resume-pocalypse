@@ -27,6 +27,39 @@ router.get('/user', async (req, res) => {
     }
 });
 /*
+    Route for getting all the logged in users information while not exposing password
+    session user.id is stored in the session upon login.
+    !This route is tested and working.
+*/
+router.get('/queryuser', async (req, res) => {
+    try {
+        if(!req.session.logged_in) {
+            res.status(401).json({message: 'You must be logged in to call this function.'});
+            return;    
+        }
+
+        const data = await UserData.findAll({ where: {user_id: req.session.user.id },
+            include: [
+                { 
+                    model: User,
+                    attributes: ['email', 'first_name', 'last_name']
+                }
+            ]
+        });
+
+        if (!data) {
+            res.status(401).json({message: 'Sorry! No data was found associated with your session.'});
+            res.redirect('/data'); // Redirect user to additional data page.
+            return;
+        }
+
+        res.status(200).json(data); // Send back all known data associated with the current logged in User
+
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+/*
     Route for getting the logged in users additional information
     session user.id is stored in the session upon login.
     !This route is tested and working.
