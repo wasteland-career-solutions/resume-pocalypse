@@ -80,10 +80,10 @@ router.get('/pdf', async (req, res) => {
 
     console.log("Sending data through route:")
 
-    const result = generateResume(userInfo, answerData);
-    console.log('In api:', result);
+    // const result = generateResume(userInfo, answerData);
+    // console.log('In api:', result);
 
-    res.json({...userInfo, ...answerData});
+    res.json({userInfo, ...answerData});
 
     // if(result){
     //     res.status(200).json(userInfo, answerData);
