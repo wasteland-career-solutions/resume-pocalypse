@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Intro",
+        "body": "You enter a tavern and find an old man at the bar. He says to you: “Welcome, traveler! If you’re going to stay here in town, you need to get a job. But first we need to find out more about you so you can find the best job for you.” (Press enter to continue.)",
+        "question_type": "Continue"
+    },
+    {
+        "name": "Professional Summary",
+        "body": "“What is so special about you anyway? Tell me about yourself.”",
+        "question_type": "Input"
+    },
+    {
+        "name": "Reaction 1",
+        "body": "“Sounds good enough. But we need to see what you’re actually good at.”  (Press enter to continue.)",
+        "question_type": "Continue"
+    },
+    {
+        "name": "Accomplishments",
+        "body": "“What are some of your proudest accomplishments out in the wasteland? Have you defeated a legendary deathclaw, uncovered hidden caches of valuable loot, or successfully negotiated a peace treaty between rival factions?”",
+        "question_type": "Input"
+    },
+    {
+        "name": "Finale",
+        "body": "“Okay we can work with this. You’re ready to start work. It's dangerous to go alone! Take this.” (Press enter to continue.)",
+        "question_type": "Continue"
+    }
+]

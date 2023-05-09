@@ -4,6 +4,8 @@ const { Question, Answer, User, UserData } = require('../models');
 
 const questionSeedData = require('./questionSeedData.json');
 
+const questionSeedTestData = require('./questionSeedTestData.json');
+
 const answerSeedData = require('./answerSeedData.json');
 
 const userSeedData = require("./userSeedData.json");
@@ -14,7 +16,7 @@ const seedDatabase = async () => {
     await sequelize.sync({ force: true });
     console.log('\n----- DATABASE SYNCED -----\n');
 
-    const questions = await Question.bulkCreate(questionSeedData);
+    const questions = await Question.bulkCreate(questionSeedTestData);
     console.log('\n----- QUESTIONS SEEDED -----\n');
 
     const user = await User.bulkCreate(userSeedData);

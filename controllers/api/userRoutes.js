@@ -12,7 +12,7 @@ router.get('/userinfo', async (req, res) => {
             return;    
         }
 
-        const data = await UserData.findAll({ where: {id: req.session.user.id } });
+        const data = await UserData.findAll({ where: {user_id: req.session.user.id } });
 
         if (!data) {
             res.status(401).json({message: 'Sorry! No data was found associated with your session.'});
@@ -165,6 +165,12 @@ router.post('/signup', async (req, res) => {
             first_name: req.body.firstName,
             last_name: req.body.lastName,
         });
+
+        req.session.user = {
+            id: dbUserData.id,
+            email: dbUserData.email,
+            firstName: dbUserData.first_name,
+        };
 
         // Create a "logged_in" session variable on user creation, sets it to true. (required for logout function)
         req.session.save(() => {
