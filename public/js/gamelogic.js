@@ -3,6 +3,7 @@ const container = document.querySelector('#game-container');
 const answerField = document.querySelector('#answer-box');
 const answerForm = document.querySelector('#answer-form');
 const qAnsList = document.querySelector('#q-and-a-list');
+let gameRunning = true;
 let allQuestionArr = fetchQuestions();
 const userAnswers = [];
 
@@ -24,29 +25,28 @@ function nextQuestion() {
 }
 
 function loadQuestion() {
+    if(position == userAnswers.length - 1) {
+        gameRunning = false;
+    }
+
     const newLi = document.createElement('li')
     const newQ = document.createElement('h2')
-    // const userAnswer = document.createElement('p');
-
     newQ.textContent = allQuestionArr[position].body;
     nextQuestion();
 
     newQ.setAttribute('class', 'question-container');
-
-    // if(answerField.value && answerField.value != answerField.defaultValue) { // Check if there was an answer to store in the list item entry
-    //     userAnswer.textContent = userAnswer[userAnswer.length - 1];
-    //     newLi.appendChild(userAnswer);
-    // } else {
-    //     console.log('Error storing response');
-    // }
     
     newLi.appendChild(newQ); // Store the previous question
-    // newLi.appendChild(userAnswer);
     qAnsList.appendChild(newLi);
+
+    if(!gameRunning) {
+        exitProgram();
+    }
 }
 
-function resetAnswer() {
-    
+function exitProgram() {
+    // send off data to backend
+    // reroute to /resume.handlebars
 }
 
 async function init() {
