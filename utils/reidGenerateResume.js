@@ -1,7 +1,7 @@
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
 const { Base64Encode } = require('base64-stream');
-const blobStream = require('blob-stream');
+// const blobStream = require('blob-stream');
 
 const testTemplate = {
 
@@ -201,20 +201,18 @@ function generateResume(user, answers) {
   // Add the name and contact information
   // doc.text(`${user[0].userInfo.first_name} ${user[0].userInfo.last_name}\n`);
   // doc.text(`${user[0].userInfo.city}, ${user[0].userInfo.state} ${user[0].userInfo.zip_code} | ${user[0].userInfo.phone} | ${user.userInfo[0].email}\n\n`);
+  
   doc.text(`This is a test`);
   doc.end();
 
-  stream.on('data', function(chunk) {
-    finalString += chunk;
-  });
+  // stream.on('finish', function() {
+  //   // get a blob you can do whatever you like with
+  //   const blob = stream.toBlob('application/pdf');
 
-  stream.on('end', function() {
-    // the stream is at its end, so push the resulting base64 string to the response
-    // console.log('In backend:', finalString);
-    return finalString;
-  });
-
-  return finalString;
+  //   // or get a blob URL for display in the browser
+  //   const url = stream.toBlobURL('application/pdf');
+  //   iframe.src = url;
+  // });
 }
 
 // gatherData();
