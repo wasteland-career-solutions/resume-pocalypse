@@ -21,17 +21,20 @@ async function fetchQuestions() {
 };
 
 function nextQuestion() {
-    position++;
+    if(gameRunning){
+        position++;
+    }
 }
 
 function loadQuestion() {
-    if(position == userAnswers.length - 1) {
+    if(position == allQuestionArr.length - 1) {
         gameRunning = false;
     }
 
     const newLi = document.createElement('li')
     const newQ = document.createElement('h2')
     newQ.textContent = allQuestionArr[position].body;
+
     nextQuestion();
 
     newQ.setAttribute('class', 'question-container');
@@ -44,9 +47,47 @@ function loadQuestion() {
     }
 }
 
+async function sendAnswers(answersObj) {
+    try {
+        const result = await fetch(`/api/users/submitallanswers`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: answersObj
+        });
+        const data = await result.json();
+        return data;
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+async function leaveGame() {
+    const response = await fetch('/resume', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok) {
+        document.location.replace('/resume');
+    } 
+    else {
+        alert(response.statusText);
+    }
+}
+
 function exitProgram() {
     // send off data to backend
     // reroute to /resume.handlebars
+    const answerObjArr = []
+    for(var i = 0; i < userAnswers.length; i++) {
+        answerObjArr.push({
+            question_id: allQuestionArr[i].id,
+            user_answer: userAnswers[i]
+        })
+    }
+
+    sendAnswers(JSON.stringify(answerObjArr));
+
+    leaveGame();
 }
 
 async function init() {
@@ -63,6 +104,9 @@ init();
 
 document.querySelector('#answer-form').addEventListener('submit', (event) => {
     event.preventDefault();
+    if(!gameRunning){
+        return;
+    }
     if(answerField.value != "" && answerField.value != answerField.defaultValue) {
         const userAnswer = document.createElement('p');
         const newLi = document.createElement('li')

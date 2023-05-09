@@ -19,7 +19,7 @@ const signupFormHandler = async (event) => { // handler for when a user signs up
     if (response.ok) {
         document.location.replace('/game/play'); // Navigate to game after sign up
     } else {
-        alert('Failed to sign in');
+        alert('Failed to create an account');
     }
   }
 };

@@ -24,7 +24,7 @@ router.get('/game', async (req, res) => {
 
 router.get('/userinfo', (req, res) => {
     if (req.session.logged_in) {
-        res.render('userinfo', { logged_in: req.session.logged_in, logged_in_uid: req.session.user.id });
+        res.render('userinfo', { logged_in: req.session.logged_in, });
     } else {
         res.redirect('login');
         alert('Please log in to input user info.');
