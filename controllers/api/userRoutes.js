@@ -33,7 +33,6 @@ router.get('/useranswers'), async (req, res) => {
                 }
             ]
         })
-
         const answers = dbAnswerData.map((answer) => answer.get({ plain: true}))
         res.json(answers);
     } catch (err) {
@@ -72,8 +71,10 @@ router.post('/submitanswers', async (req, res) => {
 })
 
 router.post('/info', async (req, res) => {
+    console.log(req.body);
     try {
         const dbUserData = await UserData.create({
+            user_id: req.session.user.id,
             address_line_1: req.body.addrLine1,
             address_line_2: req.body.addrLine2,
             city: req.body.city,

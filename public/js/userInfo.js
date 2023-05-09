@@ -1,7 +1,9 @@
+console.log("Are we here yet?")
+
 const userDataFormHandler = async (event) => {
     event.preventDefault();
-    
-    const loggedInUser = document.querySelector('#form-uid').value.trim();
+
+    // const loggedInUser = parseInt(document.querySelector('#form-uid').textContent.trim());
     const addrLine1 = document.querySelector('#user-addr-line-1').value.trim();
     const addrLine2 = document.querySelector('#user-addr-line-2').value.trim();
     const city = document.querySelector('#user-city').value.trim();
@@ -12,11 +14,11 @@ const userDataFormHandler = async (event) => {
     const linkedInUrl = document.querySelector('#user-linkedin').value.trim();
     // City and State are the only things required for additional info, other than either a github or linkedin URL
     if (city && state && (githubUrl || linkedInUrl)) {
+        // console.log("Are we here yet?")
         const response = await fetch('/api/users/info', { // Presumed API
             method: 'POST',
             body: JSON.stringify(
             {
-                loggedInUser,
                 addrLine1,
                 addrLine2,
                 city,
@@ -38,5 +40,5 @@ const userDataFormHandler = async (event) => {
 };
   
 document
-    .querySelector('.user-data-form')
+    .querySelector('#user-data-form')
     .addEventListener('submit', userDataFormHandler);
