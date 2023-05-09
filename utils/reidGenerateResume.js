@@ -64,7 +64,7 @@ const resumeData = {
 
 function renderResume(resData) {
   console.log(resData);
-    // Create a new PDF document using PDFKit
+  // Create a new PDF document using PDFKit
   // const doc = new PDFDocument();
 
   // // Pipe the PDF document to a file or stream
@@ -177,6 +177,14 @@ async function gatherData() {
   // console.log(z);
 }
 
+function generateResume(user, answers) {
+  console.log('Made it to the backend script with:')
+  console.log(user);
+  console.log(answers);
+  return
+}
+
 gatherData();
 
+module.exports = { generateResume };
 // generate resume as base64, export helper function that converts that base64 to a blob

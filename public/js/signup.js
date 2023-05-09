@@ -14,10 +14,9 @@ const signupFormHandler = async (event) => { // handler for when a user signs up
             body: JSON.stringify({ email, password, firstName, lastName }),
             headers: { 'Content-Type': 'application/json' },
         });
-
         
     if (response.ok) {
-        document.location.replace('/game/play'); // Navigate to game after sign up
+        document.location.replace('/'); // Navigate to homepage after sign up
     } else {
         alert('Failed to create an account');
     }

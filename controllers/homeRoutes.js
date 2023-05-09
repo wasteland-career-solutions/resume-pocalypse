@@ -30,7 +30,7 @@ router.get('/userinfo', (req, res) => {
         alert('Please log in to input user info.');
     }
 })
-
+// Pass in the base 64 object to a custom helper.
 router.get('/resume', (req, res) => {
     res.render('resume', { logged_in: req.session.logged_in, });
 });
