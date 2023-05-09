@@ -47,6 +47,13 @@ function loadQuestion() {
 function exitProgram() {
     // send off data to backend
     // reroute to /resume.handlebars
+    const answerObjArr = []
+    for(var i = 0; i < userAnswers.length; i++) {
+        answerObjArr.push({
+            question_id: allQuestionArr[i].id,
+            user_answer: userAnswers[i]
+        })
+    }
 }
 
 async function init() {

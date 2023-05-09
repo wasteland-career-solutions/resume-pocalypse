@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { Question } = require('../models');
+const { Question, Answer } = require('../models');
 // const Question = require('../models/Question');
 
 const questionSeedData = require('./questionSeedData.json');
@@ -11,7 +11,7 @@ const seedDatabase = async () => {
 
     const questions = await Question.bulkCreate(questionSeedData);
 
-    const answers = await Answer.bulkCreate(answerSeedData.json);
+    const answers = await Answer.bulkCreate(answerSeedData);
 
     // await Question.bulkCreate(questionSeedData, {
     //     individualHooks: true,
