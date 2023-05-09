@@ -3,6 +3,7 @@ const { User, UserData, Question, Answer } = require('../../models');
 /*
     Route for getting the logged in users additional information
     session user.id is stored in the session upon login.
+    !This route is tested and working.
 */
 router.get('/userinfo', async (req, res) => {
     try {
@@ -26,14 +27,15 @@ router.get('/userinfo', async (req, res) => {
     }
 });
 /*
-    Route for getting the logged in users answers
-    session user.id is stored in the session upon login.
-    !This route is tested and does not work.
+    Route for getting the logged in users answers.
+    session user.id is stored in the session upon login. 
+    !This route is tested and working. 
 */
-router.get('/useranswers'), async (req, res) => {
+router.get('/useranswers', async (req, res) => {
+    console.log('Do I even exist?');
     try {
         const dbAnswerData = await Answer.findAll({
-            where: {id: req.session.user.id },
+            where: {user_id: req.session.user.id },
             include: [
                 { 
                     model: Question,
@@ -42,11 +44,12 @@ router.get('/useranswers'), async (req, res) => {
             ]
         })
         const answers = dbAnswerData.map((answer) => answer.get({ plain: true}))
-        res.json(answers);
+        res.status(200).json(answers);
     } catch (err) {
+        res.status(500).json(err);
         console.error(err);
     }
-}
+});
 /*
     Route for getting the QUESTions for a user, authentication not critical since
     only our perpriotary QUESTion data is stored here.
