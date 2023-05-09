@@ -38,6 +38,10 @@ body {
   border-radius: 55px;
 }
 
+.login-card .form-input {
+  color: black;
+}
+
 .signup-card {  
   width: 300px;
   height: 400px;
@@ -52,6 +56,10 @@ body {
   color: #FEF265;
   border: 1px solid #ccc;
   border-radius: 55px;
+}
+
+.signup-card .form-input {
+  color: black;
 }
 
 #game-container {
