@@ -129,60 +129,6 @@ function renderResume(resData) {
   // doc.end();
 }
 
-
-// // Call for basic data related to currently logged in user
-// const getThisUser = async () => {
-//   try {
-//     const result = await fetch('/api/users/user', {
-//         method: 'GET',
-//         headers: { 'Content-Type': 'application/json' }
-//     });
-//     const data = await result.json();
-//       return data;
-//   } catch (err) {
-//       console.error(err);
-//   }
-// }
-
-// // Call for all additional data related to currently logged in user
-// const getUserData = async () => {
-//   try {
-//     const result = await fetch('/api/users/userinfo', {
-//         method: 'GET',
-//         headers: { 'Content-Type': 'application/json' }
-//     });
-//     const data = await result.json();
-//     return data;
-//   } catch (err) {
-//       console.error(err);
-//   }
-// }
-// // Get all the users question answers
-// const getUserAnswers = async () => {
-//   try {
-//     const result = await fetch('/api/users/useranswers', {
-//         method: 'GET',
-//         headers: { 'Content-Type': 'application/json' }
-//     });
-//     const data = await result.json();
-//     return data;
-//   } catch (err) {
-//       console.error(err);
-//   }
-// }
-
-// async function gatherData() {
-//   let x = getThisUser();
-//   let y = getUserAnswers();
-//   let z = getUserData();
-//   const currentUser = ({x, y, z})
-//   renderResume(currentUser);
-//   // console.log(currentUser);
-//   // console.log(x);
-//   // console.log(y);
-//   // console.log(z);
-// }
-
 function generateResume(user, answers) {
   // console.log('Made it to the backend script with:')
   // console.log(user, typeof(data));
@@ -190,7 +136,6 @@ function generateResume(user, answers) {
 
   const doc = new PDFDocument();
 
-  var finalString = ''; // contains the base64 string
   // var stream = doc.pipe(new Base64Encode());
   var stream = doc.pipe(blobStream());
   
