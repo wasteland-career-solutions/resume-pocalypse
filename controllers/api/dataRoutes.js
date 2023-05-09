@@ -13,7 +13,9 @@ router.get('/pdf', async (req, res) => {
             return;    
         }
 
-        const data = await UserData.findAll({raw: true, where: {user_id: req.session.user.id },
+        const data = await UserData.findAll({
+            raw: true, 
+            where: {user_id: req.session.user.id },
             include: [
                 { 
                     model: User,
@@ -49,20 +51,19 @@ router.get('/pdf', async (req, res) => {
         res.status(500).json(err);
         console.error(err);
     }
-    
+
     console.log("Sending data through route:")
-    console.log(`UserInfo: ${userInfo}`);
-    console.log(`Answers: ${answerData}`);
+
     const result = generateResume(userInfo, answerData);
-    console.log(result);
+    console.log('In api:', result);
 
-    res.json({userInfo, answerData});
+    res.json({...userInfo, ...answerData});
 
-    if(result){
-        res.status(200).json(userInfo, answerData);
-    } else {
-        res.status(500).json(result);
-    }
+    // if(result){
+    //     res.status(200).json(userInfo, answerData);
+    // } else {
+    //     res.status(500).json(result);
+    // }
 });
 
 module.exports = router;

@@ -1,5 +1,11 @@
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
+const { Base64Encode } = require('base64-stream');
+const blobStream = require('blob-stream');
+
+const testTemplate = {
+
+}
 
 // Data for the resume
 const resumeData = {
@@ -124,67 +130,94 @@ function renderResume(resData) {
 }
 
 
-// Call for basic data related to currently logged in user
-const getThisUser = async () => {
-  try {
-    const result = await fetch('/api/users/user', {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-    });
-    const data = await result.json();
-      return data;
-  } catch (err) {
-      console.error(err);
-  }
-}
+// // Call for basic data related to currently logged in user
+// const getThisUser = async () => {
+//   try {
+//     const result = await fetch('/api/users/user', {
+//         method: 'GET',
+//         headers: { 'Content-Type': 'application/json' }
+//     });
+//     const data = await result.json();
+//       return data;
+//   } catch (err) {
+//       console.error(err);
+//   }
+// }
 
-// Call for all additional data related to currently logged in user
-const getUserData = async () => {
-  try {
-    const result = await fetch('/api/users/userinfo', {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-    });
-    const data = await result.json();
-    return data;
-  } catch (err) {
-      console.error(err);
-  }
-}
-// Get all the users question answers
-const getUserAnswers = async () => {
-  try {
-    const result = await fetch('/api/users/useranswers', {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-    });
-    const data = await result.json();
-    return data;
-  } catch (err) {
-      console.error(err);
-  }
-}
+// // Call for all additional data related to currently logged in user
+// const getUserData = async () => {
+//   try {
+//     const result = await fetch('/api/users/userinfo', {
+//         method: 'GET',
+//         headers: { 'Content-Type': 'application/json' }
+//     });
+//     const data = await result.json();
+//     return data;
+//   } catch (err) {
+//       console.error(err);
+//   }
+// }
+// // Get all the users question answers
+// const getUserAnswers = async () => {
+//   try {
+//     const result = await fetch('/api/users/useranswers', {
+//         method: 'GET',
+//         headers: { 'Content-Type': 'application/json' }
+//     });
+//     const data = await result.json();
+//     return data;
+//   } catch (err) {
+//       console.error(err);
+//   }
+// }
 
-async function gatherData() {
-  let x = getThisUser();
-  let y = getUserAnswers();
-  let z = getUserData();
-  const currentUser = ({x, y, z})
-  renderResume(currentUser);
-  // console.log(currentUser);
-  // console.log(x);
-  // console.log(y);
-  // console.log(z);
-}
+// async function gatherData() {
+//   let x = getThisUser();
+//   let y = getUserAnswers();
+//   let z = getUserData();
+//   const currentUser = ({x, y, z})
+//   renderResume(currentUser);
+//   // console.log(currentUser);
+//   // console.log(x);
+//   // console.log(y);
+//   // console.log(z);
+// }
 
 function generateResume(user, answers) {
-  console.log('Made it to the backend script with:')
-  console.log(user);
-  console.log(answers);
-  return
+  // console.log('Made it to the backend script with:')
+  // console.log(user, typeof(data));
+  // console.log(answers, typeof(answers));
+
+  const doc = new PDFDocument();
+
+  var finalString = ''; // contains the base64 string
+  // var stream = doc.pipe(new Base64Encode());
+  var stream = doc.pipe(blobStream());
+  
+  // Define the document properties
+  doc.fontSize(12);
+  doc.font('Helvetica');
+  
+  // Add the name and contact information
+  // doc.text(`${user[0].userInfo.first_name} ${user[0].userInfo.last_name}\n`);
+  // doc.text(`${user[0].userInfo.city}, ${user[0].userInfo.state} ${user[0].userInfo.zip_code} | ${user[0].userInfo.phone} | ${user.userInfo[0].email}\n\n`);
+  doc.text(`This is a test`);
+  doc.end();
+
+  stream.on('data', function(chunk) {
+    finalString += chunk;
+  });
+
+  stream.on('end', function() {
+    // the stream is at its end, so push the resulting base64 string to the response
+    // console.log('In backend:', finalString);
+    return finalString;
+  });
+
+  return finalString;
 }
 
-gatherData();
+// gatherData();
 
 module.exports = { generateResume };
 // generate resume as base64, export helper function that converts that base64 to a blob
