@@ -1,0 +1,17 @@
+[
+    {
+        "user-id": "1",
+        "question-id": "2",
+        "user-answer": "I am special. I am a certified garbage specialist and I'm the best one ever!"
+    },
+    {
+        "user-id": "1",
+        "question-id": "4",
+        "user-answer": "I know how to empty dumpsters."
+    },
+    {
+        "user-id": "1",
+        "question-id": "5",
+        "user-answer": "I know how to clean toilets."
+    }
+]
