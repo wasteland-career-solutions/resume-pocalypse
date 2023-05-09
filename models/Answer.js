@@ -40,3 +40,10 @@ Answer.init(
 );
 
 module.exports = Answer;
+
+/* userAnswers[0] = answer to the first question
+// resumeData = []
+// userAnswers.forEach((answer) =>
+// answer.id answer.user_id answer.question_id answer.user_answer );
+//
+*/

@@ -24,11 +24,15 @@ router.get('/game', async (req, res) => {
 
 router.get('/userinfo', (req, res) => {
     if (req.session.logged_in) {
-        res.render('userinfo', { logged_in: req.session.logged_in });
+        res.render('userinfo', { logged_in: req.session.logged_in, logged_in_uid: req.session.user.id });
     } else {
         res.redirect('login');
         alert('Please log in to input user info.');
     }
 })
+
+router.get('/resume', (req, res) => {
+    res.render('resume', { logged_in: req.session.logged_in, });
+});
 
 module.exports = router;

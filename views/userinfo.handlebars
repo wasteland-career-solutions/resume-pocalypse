@@ -1,28 +1,45 @@
 <body>
-    <form>
-        <label for="user-addr-line-1">Address Line 1:</label>
-        <input type="text" id="user-addr-line-1" name="user-addr-line-1" value="{{addrLine1}}" required>
+    <div id="form-uid" visbility="hidden">{{logged_in_uid}}</div>
+    <form class="form signup-form" id="user-data-form">
+        <div class="form-group">
+            <label for="user-addr-line-1">Address Line 1:</label>
+            <input type="text" id="user-addr-line-1" name="user-addr-line-1" >
+        </div>
 
-        <label for="user-addr-line-2">Address Line 2:</label>
-        <input type="text" id="user-addr-line-2" name="user-addr-line-2" value="{{addrLine2}}">
+        <div class="form-group">
+            <label for="user-addr-line-2">Address Line 2:</label>
+            <input type="text" id="user-addr-line-2" name="user-addr-line-2">
+        </div>
 
-        <label for="user-city">City:</label>
-        <input type="text" id="user-city" name="user-city" value="{{city}}" required>
+        <div class="form-group">
+            <label for="user-city">City:</label>
+            <input type="text" id="user-city" name="user-city" >
+        </div>
 
-        <label for="user-state">State:</label>
-        <input type="text" id="user-state" name="user-state" value="{{state}}" required>
+        <div class="form-group">
+            <label for="user-state">State:</label>
+            <input type="text" id="user-state" name="user-state" >
+        </div>
 
-        <label for="user-zip-code">Zip Code:</label>
-        <input type="text" id="user-zip-code" name="user-zip-code" value="{{zipCode}}" required>
+        <div class="form-group">
+            <label for="user-zip-code">Zip Code:</label>
+            <input type="text" id="user-zip-code" name="user-zip-code" >
+        </div>
 
-        <label for="user-phone">Phone Number:</label>
-        <input type="text" id="user-phone" name="user-phone" value="{{phoneNum}}" required>
+        <div class="form-group">
+            <label for="user-phone">Phone Number:</label>
+            <input type="text" id="user-phone" name="user-phone" >
+        </div>
+        <div class="form-group">
+            <label for="user-github">GitHub URL:</label>
+            <input type="text" id="user-github" name="user-github">
+        </div>
 
-        <label for="user-github">GitHub URL:</label>
-        <input type="text" id="user-github" name="user-github" value="{{githubUrl}}">
-
-        <label for="user-linkedin">LinkedIn URL:</label>
-        <input type="text" id="user-linkedin" name="user-linkedin" value="{{linkedInUrl}}">
+        <div class="form-group">
+            <label for="user-linkedin">LinkedIn URL:</label>
+            <input type="text" id="user-linkedin" name="user-linkedin">
+        </div>
     </form>
+    <button class='btn btn-primary submit-info-button'>Submit Info</button>
     <script src="./js/userinfo.js"></script>
 </body>
