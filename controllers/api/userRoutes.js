@@ -28,6 +28,7 @@ router.get('/userinfo', async (req, res) => {
 /*
     Route for getting the logged in users answers
     session user.id is stored in the session upon login.
+    !This route is tested and does not work.
 */
 router.get('/useranswers'), async (req, res) => {
     try {
@@ -50,6 +51,7 @@ router.get('/useranswers'), async (req, res) => {
     Route for getting the QUESTions for a user, authentication not critical since
     only our perpriotary QUESTion data is stored here.
     It is unclear if .map() is necessary when not using a Handlebars Helper at endpoint
+    !This route is tested and works.
 */
 router.get('/play', async (req, res) => {
     try {
@@ -64,6 +66,7 @@ router.get('/play', async (req, res) => {
     }
 });
 /*
+    !This route is untested.
     Route for calling a specific QUESTion for a user
     authentication not critical since only our perpriotary QUESTion data is stored here.
     This is not currently being used, but it's helpful to have for now.
@@ -81,6 +84,7 @@ router.get('/play/:id', async (req, res) => {
     }
 });
 /*
+    !This route is untested.
     Route for submitting individual answers
     Answer ID is implicit  
 */
@@ -123,8 +127,8 @@ router.post('/info', async (req, res) => {
     try {
         const dbUserData = await UserData.create({
             user_id: req.session.user.id,
-            address_line_1: req.body.addrLine1,
-            address_line_2: req.body.addrLine2,
+            address_line_1: req.body.address_line_1,
+            address_line_2: req.body.address_line_2,
             city: req.body.city,
             state: req.body.state,
             zip_code: req.body.zipCode,
