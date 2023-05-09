@@ -15,8 +15,8 @@ const userDataFormHandler = async (event) => {
             method: 'POST',
             body: JSON.stringify(
             {
-                address_line_1,
-                address_line_2,
+                addrLine1,
+                addrLine2,
                 city,
                 state,
                 zipCode,

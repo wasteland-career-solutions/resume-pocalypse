@@ -100,7 +100,7 @@ router.post('/submitanswer', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
 /*
     Route for submitting bulk answers
     Answer ID is implicit  
@@ -117,18 +117,20 @@ router.post('/submitallanswers', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
 /*
     Route for submitting user info
     User ID is stored in session 
     !This route is tested and works.
 */
 router.post('/info', async (req, res) => {
+    console.log('Arrived in the backend');
+    console.log(req.body);
     try {
         const dbUserData = await UserData.create({
             user_id: req.session.user.id,
-            address_line_1: req.body.address_line_1,
-            address_line_2: req.body.address_line_2,
+            address_line_1: req.body.addrLine1,
+            address_line_2: req.body.addrLine2,
             city: req.body.city,
             state: req.body.state,
             zip_code: req.body.zipCode,
