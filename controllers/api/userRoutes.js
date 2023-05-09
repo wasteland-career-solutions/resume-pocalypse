@@ -100,16 +100,12 @@ router.post('/submitanswer', async (req, res) => {
 /*
     Route for submitting bulk answers
     Answer ID is implicit  
+    !This route is tested and works.
 */
 router.post('/submitallanswers', async (req, res) => {
-    const formatted = req.body.map((answer) => {
-        ({   
-            user_id: req.session.user.id,
-            question_id: answer.questionId,
-            user_answer: answer.user_answer
-        })
-    });
-
+    console.log(req.body);
+    const formatted = req.body.map( (answer) => ({user_id: req.session.user.id, ...answer}));
+    console.log(formatted);
     try {
         const dbUserAnswers = await Answer.bulkCreate(formatted);
 
@@ -120,7 +116,8 @@ router.post('/submitallanswers', async (req, res) => {
 })
 /*
     Route for submitting user info
-    User ID is stored in session  
+    User ID is stored in session 
+    !This route is tested and works.
 */
 router.post('/info', async (req, res) => {
     try {
@@ -148,7 +145,8 @@ router.post('/info', async (req, res) => {
 });
 /*
     Route for submitting user info
-    User ID is stored in session  
+    User ID is stored in session
+    !This route is tested and works.
 */
 router.post('/signup', async (req, res) => {
     try {
@@ -171,7 +169,8 @@ router.post('/signup', async (req, res) => {
 });
 /*
     Route for logging a user in.
-    User ID gets stored in session  
+    User ID gets stored in session 
+    !This route is tested and works.
 */
 router.post('/login', async (req, res) => {
     try {
@@ -208,7 +207,8 @@ router.post('/login', async (req, res) => {
 });
 /*
     Route to log a user out.
-    User ID gets stored in session  
+    Session is destroyed at logout
+    !This route is tested and works.
 */
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {

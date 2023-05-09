@@ -17,14 +17,14 @@ const seedDatabase = async () => {
     const questions = await Question.bulkCreate(questionSeedData);
     console.log('\n----- QUESTIONS SEEDED -----\n');
 
-    const answers = await Answer.bulkCreate(answerSeedData);
-    console.log('\n----- ANSWERS SEEDED -----\n');
-
     const user = await User.bulkCreate(userSeedData);
     console.log('\n----- USERS SEEDED -----\n');
 
     const userData = await UserData.bulkCreate(userDataSeedData);
     console.log('\n----- USER DATA SEEDED -----\n');
+
+    const answers = await Answer.bulkCreate(answerSeedData);
+    console.log('\n----- ANSWERS SEEDED -----\n');
     // await Question.bulkCreate(questionSeedData, {
     //     individualHooks: true,
     //     returning: true,

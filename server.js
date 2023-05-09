@@ -48,15 +48,4 @@ sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
         console.log(`Server listening on: http://localhost:${PORT}`)
     })
-})
-// const { Answer, Question, User, UserData } = require('./models');
-
-// const { engine } = require('express-handlebars');
-
-// app.set('views', path.join(__dirname, 'views'))
-
-// Sets up and imports api and view routes
-// const apiRoutes = require('./controllers/api');
-// const homeRoutes = require('./controllers');
-// app.use('/api', apiRoutes);
-// app.use('/', homeRoutes);
+});
