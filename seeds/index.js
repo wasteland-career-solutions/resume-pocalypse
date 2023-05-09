@@ -16,7 +16,7 @@ const seedDatabase = async () => {
     await sequelize.sync({ force: true });
     console.log('\n----- DATABASE SYNCED -----\n');
 
-    const questions = await Question.bulkCreate(questionSeedTestData);
+    const questions = await Question.bulkCreate(questionSeedData);
     console.log('\n----- QUESTIONS SEEDED -----\n');
 
     const user = await User.bulkCreate(userSeedData);
@@ -27,10 +27,6 @@ const seedDatabase = async () => {
 
     const answers = await Answer.bulkCreate(answerSeedData);
     console.log('\n----- ANSWERS SEEDED -----\n');
-    // await Question.bulkCreate(questionSeedData, {
-    //     individualHooks: true,
-    //     returning: true,
-    // });
 
     process.exit(0);
 };
