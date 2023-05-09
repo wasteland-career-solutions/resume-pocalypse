@@ -1,6 +1,32 @@
 const router = require('express').Router();
 const { User, UserData, Question, Answer } = require('../../models');
 /*
+    Route for getting the logged in users information
+    session user.id is stored in the session upon login.
+    !This route is tested and working.
+*/
+router.get('/user', async (req, res) => {
+    console.log(req.session.user);
+    try {
+        if(!req.session.logged_in) {
+            res.status(401).json({message: 'You must be logged in to call this function.'});
+            return;    
+        }
+        // maybe just send back req.session.user
+        const data = await User.findByPk(req.session.user.id); //unfortunately this also sends back password
+
+        if (!data) {
+            res.status(401).json({message: 'Sorry! No data was found associated with your session.'});
+            return;
+        }
+
+        res.status(200).json(data); // Send back all known data associated with the current logged in User
+
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+/*
     Route for getting the logged in users additional information
     session user.id is stored in the session upon login.
     !This route is tested and working.
