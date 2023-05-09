@@ -23,6 +23,24 @@ router.get('/userdata', async (req, res) => {
     }
 });
 
+router.get('/useranswers'), async (req, res) => {
+    try {
+        const dbAnswerData = await Answer.findAll({
+            include: [
+                { 
+                    model: Question,
+                    attributes: ['name', 'question_type']
+                }
+            ]
+        })
+
+        const answers = dbAnswerData.map((answer) => answer.get({ plain: true}))
+        res.json(answers);
+    } catch (err) {
+        console.error(err);
+    }
+}
+
 router.get('/play', async (req, res) => {
     try {
         const dbQuestionData = await Question.findAll();
@@ -46,6 +64,34 @@ router.get('/play/:id', async (req, res) => {
         res.json(questions);
     } catch (err) {
         res.status(500).json(err)
+    }
+});
+
+router.post('/submitanswers', async (req, res) => {
+    
+})
+
+router.post('/info', async (req, res) => {
+    try {
+        const dbUserData = await UserData.create({
+            address_line_1: req.body.addrLine1,
+            address_line_2: req.body.addrLine2,
+            city: req.body.city,
+            state: req.body.state,
+            zip_code: req.body.zipCode,
+            phone_number: req.body.phoneNum,
+            github_url: req.body.githubUrl ,
+            linkedin_url: req.body.linkedInUrl
+        });
+
+        // Create a "data_stored" session variable on user creation, sets it to true. (required for logout function)
+        req.session.save(() => {
+            req.session.data_stored = true;
+
+            res.status(200).json(dbUserData);
+        });
+    } catch (err) {
+        res.status(500).json(err);
     }
 });
 

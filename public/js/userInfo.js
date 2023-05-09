@@ -1,6 +1,7 @@
 const userDataFormHandler = async (event) => {
     event.preventDefault();
-  
+    
+    const loggedInUser = document.querySelector('#form-uid').value.trim();
     const addrLine1 = document.querySelector('#user-addr-line-1').value.trim();
     const addrLine2 = document.querySelector('#user-addr-line-2').value.trim();
     const city = document.querySelector('#user-city').value.trim();
@@ -15,6 +16,7 @@ const userDataFormHandler = async (event) => {
             method: 'POST',
             body: JSON.stringify(
             {
+                loggedInUser,
                 addrLine1,
                 addrLine2,
                 city,

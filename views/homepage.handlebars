@@ -5,6 +5,9 @@
         <button class='btn btn-primary signup-button'>SIGN UP</button>
         <button class='btn btn-primary login-button'>LOG IN</button>
         <button class='btn btn-primary play-button'>PLAY GAME</button>
+        {{#if logged_in}}
+        <button class='btn btn-primary info-button'>Additional Info</button>
+        {{/if}}
     </div>
     
     <script src="/js/homepage.js"></script>

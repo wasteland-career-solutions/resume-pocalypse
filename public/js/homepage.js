@@ -18,3 +18,16 @@ document.querySelector('.play-button').addEventListener('click', async () => {
         alert(response.statusText);
     }
 });
+
+document.querySelector('.info-button').addEventListener('click', async () => {
+    const response = await fetch('/userinfo', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok) {
+        document.location.replace('/userinfo');
+    } 
+    else {
+        alert(response.statusText);
+    }
+});
