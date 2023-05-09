@@ -7,17 +7,18 @@
 }
 
 img {
-  max-height: 400px;
+  max-width: 100%;
+  height: auto;
 }
 
 body {
-  background: linear-gradient(90deg, #4b4b4b 90%, #171717 100%, #4b4b4b 90%);
+  background: linear-gradient(to bottom, #676666 30%, #171717 100%);
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   justify-self: center;
   align-content: center;
-  color: #1bff80;
+  color: #33d633;
 }
 
 /* Apply styles to the container element */
@@ -82,6 +83,13 @@ body {
   color: black;
 }
 
+#answer-box {
+  color: black;
+  font-family: 'Chakra Petch', sans-serif;
+  list-style: none;
+  font-size: 20px;
+}
+
 #game-container {
   margin: 100px;
 }
@@ -120,4 +128,48 @@ body {
 
 .container button[type="submit"]:hover {
   background-color: #45a049;
+}
+
+
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+body {
+  font-size: 14px;
+}
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+body {
+  font-size: 16px;
+}
+
+}
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+body {
+  font-size: 16px;
+}
+
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+body {
+  font-size: 18px;
+}
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+body {
+  font-size: 20px;
+}
+
 }
