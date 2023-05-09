@@ -38,6 +38,10 @@ body {
   border-radius: 55px;
 }
 
+.login-card .form-input {
+  color: black;
+}
+
 .signup-card {  
   width: 300px;
   height: 400px;
@@ -52,6 +56,30 @@ body {
   color: #FEF265;
   border: 1px solid #ccc;
   border-radius: 55px;
+}
+
+.signup-card .form-input {
+  color: black;
+}
+
+.userdata-card {  
+  width: 315px;
+  height: 415px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+  padding: 20px;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  background-color: #325886;
+  color: #FEF265;
+  border: 1px solid #ccc;
+  border-radius: 55px;
+}
+
+.userdata-card .form-input {
+  color: black;
 }
 
 #game-container {
