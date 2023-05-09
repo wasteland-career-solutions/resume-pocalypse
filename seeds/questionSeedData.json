@@ -1,7 +1,7 @@
 [
     {
         "name": "Intro",
-        "body": "You enter a tavern and find an old man at the bar. He says to you: “Welcome, traveler! If you’re going to stay here in town, you need to get a job. But first we need to find out more about you so you can find the best job for you.”",
+        "body": "You enter a tavern and find an old man at the bar. He says to you: “Welcome, traveler! If you’re going to stay here in town, you need to get a job. But first we need to find out more about you so you can find the best job for you.” (Press enter to continue.)",
         "question_type": "Continue"
     },
     {
@@ -11,7 +11,7 @@
     },
     {
         "name": "Reaction 1",
-        "body": "“Sounds good enough. But we need to see what you’re actually good at.”",
+        "body": "“Sounds good enough. But we need to see what you’re actually good at.”  (Press enter to continue.)",
         "question_type": "Continue"
     },
     {
@@ -46,7 +46,7 @@
     },
     {
         "name": "Reaction 2",
-        "body": "“Not bad. We could probably find something for you.”",
+        "body": "“Not bad. We could probably find something for you.”  (Press enter to continue.)",
         "question_type": "Continue"
     },
     {
@@ -126,7 +126,7 @@
     },
     {
         "name": "Reaction 3",
-        "body": "“Sounds like you had some interesting times. Let’s find out how smart you are.”",
+        "body": "“Sounds like you had some interesting times. Let’s find out how smart you are.”  (Press enter to continue.)",
         "question_type": "Continue"
     },
     {
@@ -191,7 +191,7 @@
     },
     {
         "name": "Reaction 4",
-        "body": "“You might be pretty smart! We will have to find you something really good.”",
+        "body": "“You might be pretty smart! We will have to find you something really good.”  (Press enter to continue.)",
         "question_type": "Continue"
     },
     {
@@ -201,7 +201,7 @@
     },
     {
         "name": "Finale",
-        "body": "“Okay we can work with this. You’re ready to start work. It's dangerous to go alone! Take this.”",
+        "body": "“Okay we can work with this. You’re ready to start work. It's dangerous to go alone! Take this.” (Press enter to continue.)",
         "question_type": "Continue"
     }
 ]
