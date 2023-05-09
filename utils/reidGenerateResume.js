@@ -1,5 +1,5 @@
-// const PDFDocument = import('pdfkit');
-// const fs = import('fs');
+const PDFDocument = require('pdfkit');
+const fs = require('fs');
 
 // Data for the resume
 const resumeData = {
@@ -61,67 +61,68 @@ const resumeData = {
   accomplishments: 'I remembered to turn the oven off when I took the pizza out. Received a leadership trophy for helping my team for 2 years straight.'
 };
 
-/*
-function renderResume() {
+
+function renderResume(resData) {
+  console.log(resData);
     // Create a new PDF document using PDFKit
-  const doc = new PDFDocument();
+  // const doc = new PDFDocument();
 
-  // Pipe the PDF document to a file or stream
-  doc.pipe(fs.createWriteStream('./resumes/reid-resume-example.pdf'));
+  // // Pipe the PDF document to a file or stream
+  // doc.pipe(fs.createWriteStream('./resumes/reid-resume-example.pdf'));
 
-  // Define the document properties
-  doc.fontSize(12);
-  doc.font('Helvetica');
+  // // Define the document properties
+  // doc.fontSize(12);
+  // doc.font('Helvetica');
 
-  // Add the name and contact information
-  doc.text(`${resumeData.name}\n`);
-  doc.text(`${resumeData.city}, ${resumeData.state} ${resumeData.zip_code} | ${resumeData.phone} | ${resumeData.email}\n\n`);
+  // // Add the name and contact information
+  // doc.text(`${resumeData.name}\n`);
+  // doc.text(`${resumeData.city}, ${resumeData.state} ${resumeData.zip_code} | ${resumeData.phone} | ${resumeData.email}\n\n`);
 
-  // Add the links section
-  doc.text('Links\n', { underline: true });
-  for (const links of resumeData.links) {
-    doc.text(`${links.linkedin}\n`);
-    doc.text(`${links.github}\n\n`);
-  }
+  // // Add the links section
+  // doc.text('Links\n', { underline: true });
+  // for (const links of resumeData.links) {
+  //   doc.text(`${links.linkedin}\n`);
+  //   doc.text(`${links.github}\n\n`);
+  // }
 
-  // Add the professional summary section
-  doc.text('Professional Summary\n', { underline: true });
-  doc.text(`${resumeData.summary}\n\n`);
+  // // Add the professional summary section
+  // doc.text('Professional Summary\n', { underline: true });
+  // doc.text(`${resumeData.summary}\n\n`);
 
-  // Add the skills section
-  doc.text('Skills\n', { underline: true });
-  for (const skills of resumeData.skills) {
-    doc.text(`${skills.skill_1}\n`);
-    doc.text(`${skills.skill_2}\n`);
-    doc.text(`${skills.skill_3}\n`);
-    doc.text(`${skills.skill_4}\n`);
-    doc.text(`${skills.skill_5}\n`);
-    doc.text(`${skills.skill_6}\n\n`);
-  }
+  // // Add the skills section
+  // doc.text('Skills\n', { underline: true });
+  // for (const skills of resumeData.skills) {
+  //   doc.text(`${skills.skill_1}\n`);
+  //   doc.text(`${skills.skill_2}\n`);
+  //   doc.text(`${skills.skill_3}\n`);
+  //   doc.text(`${skills.skill_4}\n`);
+  //   doc.text(`${skills.skill_5}\n`);
+  //   doc.text(`${skills.skill_6}\n\n`);
+  // }
 
-  // Add the experience section
-  doc.text('Experience\n', { underline: true });
-  for (const work_history of resumeData.work_history) {
-    doc.text(`${work_history.job_title} - ${work_history.company}\n`);
-    doc.text(`${work_history.work_dates}\n`);
-    doc.text(`${work_history.work_tasks}\n\n`);
-  }
+  // // Add the experience section
+  // doc.text('Experience\n', { underline: true });
+  // for (const work_history of resumeData.work_history) {
+  //   doc.text(`${work_history.job_title} - ${work_history.company}\n`);
+  //   doc.text(`${work_history.work_dates}\n`);
+  //   doc.text(`${work_history.work_tasks}\n\n`);
+  // }
 
-  // Add the education section
-  doc.text('Education\n', { underline: true });
-  for (const education of resumeData.education) {
-    doc.text(`${education.degree} - ${education.school}\n`);
-    doc.text(`${education.school_dates}\n\n`);
-  }
+  // // Add the education section
+  // doc.text('Education\n', { underline: true });
+  // for (const education of resumeData.education) {
+  //   doc.text(`${education.degree} - ${education.school}\n`);
+  //   doc.text(`${education.school_dates}\n\n`);
+  // }
 
-  // Add the accomplishments section
-  doc.text('Accomplishments\n', { underline: true });
-  doc.text(`${resumeData.accomplishments}`);
+  // // Add the accomplishments section
+  // doc.text('Accomplishments\n', { underline: true });
+  // doc.text(`${resumeData.accomplishments}`);
 
-  // Finalize the PDF document
-  doc.end();
+  // // Finalize the PDF document
+  // doc.end();
 }
-*/
+
 
 // Call for basic data related to currently logged in user
 const getThisUser = async () => {
@@ -169,10 +170,13 @@ async function gatherData() {
   let y = getUserAnswers();
   let z = getUserData();
   const currentUser = ({x, y, z})
-  console.log(currentUser);
-  console.log(x);
-  console.log(y);
-  console.log(z);
+  renderResume(currentUser);
+  // console.log(currentUser);
+  // console.log(x);
+  // console.log(y);
+  // console.log(z);
 }
 
 gatherData();
+
+// generate resume as base64, export helper function that converts that base64 to a blob
