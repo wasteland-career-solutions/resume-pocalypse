@@ -1,8 +1,8 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 /* @import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"); */
 
-*{
-  font-family: 'Chakra Petch', sans-serif;
+* {
+  font-family: "Chakra Petch", sans-serif;
   list-style: none;
 }
 
@@ -23,7 +23,7 @@ body {
 
 /* Apply styles to the container element */
 
-.login-card {  
+.login-card {
   width: 300px;
   height: 400px;
   position: absolute;
@@ -34,7 +34,7 @@ body {
   padding: 20px;
   /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
   background-color: #325886;
-  color: #FEF265;
+  color: #fef265;
   border: 1px solid #ccc;
   border-radius: 55px;
 }
@@ -43,7 +43,7 @@ body {
   color: black;
 }
 
-.signup-card {  
+.signup-card {
   width: 300px;
   height: 555px;
   position: absolute;
@@ -54,7 +54,7 @@ body {
   padding: 20px;
   /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
   background-color: #325886;
-  color: #FEF265;
+  color: #fef265;
   border: 1px solid #ccc;
   border-radius: 55px;
 }
@@ -63,7 +63,7 @@ body {
   color: black;
 }
 
-.userdata-card {  
+.userdata-card {
   width: 315px;
   height: 740px;
   position: absolute;
@@ -74,7 +74,7 @@ body {
   padding: 20px;
   /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
   background-color: #325886;
-  color: #FEF265;
+  color: #fef265;
   border: 1px solid #ccc;
   border-radius: 55px;
 }
@@ -85,7 +85,7 @@ body {
 
 #answer-box {
   color: black;
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: "Chakra Petch", sans-serif;
   list-style: none;
   font-size: 20px;
 }
@@ -130,46 +130,69 @@ body {
   background-color: #45a049;
 }
 
+.pocalypse {
+  position: relative;
+  min-height: 100vh;
+}
+
+.wrapper {
+  padding-bottom: 50px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 50px;
+  bottom: 0;
+  width: 100%;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-flow: row;
+  color: #33d633;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
 
 /* No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-body {
-  font-size: 14px;
-}
-
+  body {
+    font-size: 14px;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-body {
-  font-size: 16px;
+  body {
+    font-size: 16px;
+  }
 }
-
-}
-
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-body {
-  font-size: 16px;
-}
-
+  body {
+    font-size: 16px;
+  }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-body {
-  font-size: 18px;
-}
-
+  body {
+    font-size: 18px;
+  }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-body {
-  font-size: 20px;
-}
-
+  body {
+    font-size: 20px;
+  }
 }

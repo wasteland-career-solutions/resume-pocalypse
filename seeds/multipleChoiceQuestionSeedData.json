@@ -1,36 +1,31 @@
 {
-    "questions": [
-        {
-        "number": 1,
-        "prompt": "You are approached by a frantic lead developer, foaming at the mouth they scream the project must be finished by tonight. How do you respond?",
-        "choices": [
-            "Throw it into GPT and hope for best",
-            "Ask your coworkers to work on it with you.",
-            "Tell your boss to go to hell.",
-            "Option 4"
-        ],
-        "buzzwords": [
-            "Creative problem solving",
-            "Team player",
-            "Independent",
-            "Option 4"
-        ]
+  "questions": [
+    {
+      "number": 1,
+      "prompt": "You are approached by a frantic lead developer, foaming at the mouth they scream the project must be finished by tonight. How do you respond?",
+      "choices": [
+        "Throw it into GPT and hope for best",
+        "Ask your coworkers to work on it with you.",
+        "Tell your boss to go to hell.",
+        "Option 4"
+      ],
+      "buzzwords": [
+        "Creative problem solving",
+        "Team player",
+        "Independent",
+        "Option 4"
+      ]
     },
     {
-        "number": 2,
-        "prompt": "You just finished writing a new feature for the company app. What is your next step?",
-        "choices": [
-            "Git push origin main",
-            "Contact the project manager, and wait for the code review",
-            "Write a comprehensive suit of unit tests",
-            "Option 4"
-        ],
-        "buzzwords": [
-            "Confident",
-            "Team player",
-            "Detail oriented",
-            "Option 4"
-        ]
+      "number": 2,
+      "prompt": "You just finished writing a new feature for the company app. What is your next step?",
+      "choices": [
+        "Git push origin main",
+        "Contact the project manager, and wait for the code review",
+        "Write a comprehensive suit of unit tests",
+        "Option 4"
+      ],
+      "buzzwords": ["Confident", "Team player", "Detail oriented", "Option 4"]
     }
-    ]
+  ]
 }

@@ -1,207 +1,207 @@
 [
-    {
-        "name": "Intro",
-        "body": "You enter a tavern and find an old man at the bar. He says to you: “Welcome, traveler! If you’re going to stay here in town, you need to get a job. But first we need to find out more about you so you can find the best job for you.” (Press enter to continue.)",
-        "question_type": "Continue"
-    },
-    {
-        "name": "Professional Summary",
-        "body": "“What is so special about you anyway? Tell me about yourself.”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Reaction 1",
-        "body": "“Sounds good enough. But we need to see what you’re actually good at.”  (Press enter to continue.)",
-        "question_type": "Continue"
-    },
-    {
-        "name": "Skills 1",
-        "body": "“What kind of abilities and skills have you developed in your experiences? How will you survive out there?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Skills 2",
-        "body": "Tell me another skill.",
-        "question_type": "Input"
-    },
-    {
-        "name": "Skills 3",
-        "body": "Give me another.",
-        "question_type": "Input"
-    },
-    {
-        "name": "Skills 4",
-        "body": "Another one.",
-        "question_type": "Input"
-    },
-    {
-        "name": "Skills 5",
-        "body": "Give me more.",
-        "question_type": "Input"
-    },
-    {
-        "name": "Skills 6",
-        "body": "One more.",
-        "question_type": "Input"
-    },
-    {
-        "name": "Reaction 2",
-        "body": "“Not bad. We could probably find something for you.”  (Press enter to continue.)",
-        "question_type": "Continue"
-    },
-    {
-        "name": "Work History",
-        "body": "“Have you worked before?”",
-        "question_type": "Yes/No"
-    },
-    {
-        "name": "Job Title 1",
-        "body": "“What kind of work experience have you had out in the wastes? Have you been a hired gun, a caravan guard, or a trader? Can you fix broken tech?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Company 1",
-        "body": "“Where did you do that at?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Work Dates 1",
-        "body": "“How long were you doing that for?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Work Tasks 1",
-        "body": "“What kind of challenges have you faced doing that? Have you had to deal with raiders, mutants, or radscorpions?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "More Work 1",
-        "body": "“Is that it? Or have you done anything else?”",
-        "question_type": "Yes/No"
-    },
-    {
-        "name": "Job Title 2",
-        "body": "“What else have you done?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Company 2",
-        "body": "“Where at?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Work Dates 2",
-        "body": "“How long?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Work Tasks 2",
-        "body": "“Any challenges?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "More Work 2",
-        "body": "“Is that it? Or have you done anything else?”",
-        "question_type": "Yes/No"
-    },
-    {
-        "name": "Job Title 3",
-        "body": "“Give me one more job.”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Company 3",
-        "body": "“Where?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Work Dates 3",
-        "body": "“How long on that one?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Work Tasks 3",
-        "body": "“What did you do there?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Reaction 3",
-        "body": "“Sounds like you had some interesting times. Let’s find out how smart you are.”  (Press enter to continue.)",
-        "question_type": "Continue"
-    },
-    {
-        "name": "Education",
-        "body": "“Did you do any special learning?”",
-        "question_type": "Yes/No"
-    },
-    {
-        "name": "School 1",
-        "body": "“Did you attend the prestigious vault-tec university or learn on the job as a wasteland scavenger? Where did you go?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Degree 1",
-        "body": "“What kinds of things did you learn?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "School Dates 1",
-        "body": "“When did you go there?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "More School 1",
-        "body": "“Did you have any other schooling?”",
-        "question_type": "Yes/No"
-    },
-    {
-        "name": "School 2",
-        "body": "“Where else did you go?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Degree 2",
-        "body": "“What did you learn there?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "School Dates 2",
-        "body": "“When was that?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "More School 2",
-        "body": "“Did you have any other schooling?”",
-        "question_type": "Yes/No"
-    },
-    {
-        "name": "School 3",
-        "body": "“Okay, one last school.”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Degree 3",
-        "body": "“And, what did you learn there?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "School Dates 3",
-        "body": "“When?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Reaction 4",
-        "body": "“You might be pretty smart! We will have to find you something really good.”  (Press enter to continue.)",
-        "question_type": "Continue"
-    },
-    {
-        "name": "Accomplishments",
-        "body": "“What are some of your proudest accomplishments out in the wasteland? Have you defeated a legendary deathclaw, uncovered hidden caches of valuable loot, or successfully negotiated a peace treaty between rival factions?”",
-        "question_type": "Input"
-    },
-    {
-        "name": "Finale",
-        "body": "“Okay we can work with this. You’re ready to start work. It's dangerous to go alone! Take this.” (Press enter to continue.)",
-        "question_type": "Continue"
-    }
+  {
+    "name": "Intro",
+    "body": "You enter a tavern and find an old man at the bar. He says to you: “Welcome, traveler! If you’re going to stay here in town, you need to get a job. But first we need to find out more about you so you can find the best job for you.” (Press enter to continue.)",
+    "question_type": "Continue"
+  },
+  {
+    "name": "Professional Summary",
+    "body": "“What is so special about you anyway? Tell me about yourself.”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Reaction 1",
+    "body": "“Sounds good enough. But we need to see what you’re actually good at.”  (Press enter to continue.)",
+    "question_type": "Continue"
+  },
+  {
+    "name": "Skills 1",
+    "body": "“What kind of abilities and skills have you developed in your experiences? How will you survive out there?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Skills 2",
+    "body": "Tell me another skill.",
+    "question_type": "Input"
+  },
+  {
+    "name": "Skills 3",
+    "body": "Give me another.",
+    "question_type": "Input"
+  },
+  {
+    "name": "Skills 4",
+    "body": "Another one.",
+    "question_type": "Input"
+  },
+  {
+    "name": "Skills 5",
+    "body": "Give me more.",
+    "question_type": "Input"
+  },
+  {
+    "name": "Skills 6",
+    "body": "One more.",
+    "question_type": "Input"
+  },
+  {
+    "name": "Reaction 2",
+    "body": "“Not bad. We could probably find something for you.”  (Press enter to continue.)",
+    "question_type": "Continue"
+  },
+  {
+    "name": "Work History",
+    "body": "“Have you worked before?”",
+    "question_type": "Yes/No"
+  },
+  {
+    "name": "Job Title 1",
+    "body": "“What kind of work experience have you had out in the wastes? Have you been a hired gun, a caravan guard, or a trader? Can you fix broken tech?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Company 1",
+    "body": "“Where did you do that at?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Work Dates 1",
+    "body": "“How long were you doing that for?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Work Tasks 1",
+    "body": "“What kind of challenges have you faced doing that? Have you had to deal with raiders, mutants, or radscorpions?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "More Work 1",
+    "body": "“Is that it? Or have you done anything else?”",
+    "question_type": "Yes/No"
+  },
+  {
+    "name": "Job Title 2",
+    "body": "“What else have you done?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Company 2",
+    "body": "“Where at?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Work Dates 2",
+    "body": "“How long?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Work Tasks 2",
+    "body": "“Any challenges?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "More Work 2",
+    "body": "“Is that it? Or have you done anything else?”",
+    "question_type": "Yes/No"
+  },
+  {
+    "name": "Job Title 3",
+    "body": "“Give me one more job.”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Company 3",
+    "body": "“Where?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Work Dates 3",
+    "body": "“How long on that one?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Work Tasks 3",
+    "body": "“What did you do there?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Reaction 3",
+    "body": "“Sounds like you had some interesting times. Let’s find out how smart you are.”  (Press enter to continue.)",
+    "question_type": "Continue"
+  },
+  {
+    "name": "Education",
+    "body": "“Did you do any special learning?”",
+    "question_type": "Yes/No"
+  },
+  {
+    "name": "School 1",
+    "body": "“Did you attend the prestigious vault-tec university or learn on the job as a wasteland scavenger? Where did you go?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Degree 1",
+    "body": "“What kinds of things did you learn?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "School Dates 1",
+    "body": "“When did you go there?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "More School 1",
+    "body": "“Did you have any other schooling?”",
+    "question_type": "Yes/No"
+  },
+  {
+    "name": "School 2",
+    "body": "“Where else did you go?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Degree 2",
+    "body": "“What did you learn there?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "School Dates 2",
+    "body": "“When was that?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "More School 2",
+    "body": "“Did you have any other schooling?”",
+    "question_type": "Yes/No"
+  },
+  {
+    "name": "School 3",
+    "body": "“Okay, one last school.”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Degree 3",
+    "body": "“And, what did you learn there?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "School Dates 3",
+    "body": "“When?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Reaction 4",
+    "body": "“You might be pretty smart! We will have to find you something really good.”  (Press enter to continue.)",
+    "question_type": "Continue"
+  },
+  {
+    "name": "Accomplishments",
+    "body": "“What are some of your proudest accomplishments out in the wasteland? Have you defeated a legendary deathclaw, uncovered hidden caches of valuable loot, or successfully negotiated a peace treaty between rival factions?”",
+    "question_type": "Input"
+  },
+  {
+    "name": "Finale",
+    "body": "“Okay we can work with this. You’re ready to start work. It's dangerous to go alone! Take this.” (Press enter to continue.)",
+    "question_type": "Continue"
+  }
 ]

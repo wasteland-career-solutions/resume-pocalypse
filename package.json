@@ -1,7 +1,7 @@
 {
   "name": "resume-pocalypse",
   "version": "1.0.0",
-  "description": "",
+  "description": "Week 15-16 Module Group Project from the Northwestern University Full Stack Coding Bootcamp.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/wasteland-career-solutions/resume-pocalypse.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Anthony Groce, Gary Henley, Jessie Galindo, José Segura, and Reid Madock",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wasteland-career-solutions/resume-pocalypse/issues"
